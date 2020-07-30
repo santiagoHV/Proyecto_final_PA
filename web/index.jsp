@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: santi
+  User: LaBandaQueNoMienteYRoman
   Date: 30/07/2020
   Time: 10:20 a. m.
   To change this template use File | Settings | File Templates.
@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  PUTO EL QUE LO LEA
+ PutoElquelOLEA
+  Y gei
   </body>
 </html>
