@@ -11,7 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  PUTO EL QUE LO LEA x2SLDRKWOLKGJSDKGLJSLGKJSFLK
-  PUTO EL QUE LO ESCRI
+  Ola amikitos
   </body>
 </html>
