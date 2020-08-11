@@ -1,0 +1,148 @@
+.body-login {
+    background: url(img/40.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+.body-registro {
+    background: url(img/asab.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+.body-preregistro {
+    background: url(img/estudiantes-septima.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+.container-login {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 400px;
+    height: 430px;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    fill-opacity: 30%;
+}
+
+.container-registro {
+    background-color: rgba(0, 0, 0, 0.7);
+    fill-opacity: 30%;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+}
+
+.login {
+    width: 80%;
+    height: 72%;
+    padding: 10%;
+}
+
+.new {
+    background-color: brown;
+    width: 97%;
+    height: 6%;
+    margin-top: 6px;
+    padding-left: 12px;
+    border-radius: 0px 0px 10px 10px;
+    color: white;
+    padding-top: 8px;
+}
+
+.form-login {
+    width: auto;
+    height: auto;
+}
+
+.form-registro {
+    color: white;
+}
+
+.input-login {
+    background-color: #f7f7f7;
+    width: 90%;
+    margin-bottom: 10%;
+    padding: 10px;
+    border: 0px solid black;
+    border-bottom: 1px solid black;
+}
+
+.button-login {
+    background-color: brown;
+    width: 40%;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 30%;
+    color: white;
+}
+
+.escudo-login {
+    width: 300px;
+    height: 100px;
+    margin-top: -200px;
+}
+
+.escudo-registro {
+    width: 300px;
+    height: 100px;
+}
+
+.thead-lighti {
+    background-color: brown;
+    color: white;
+}
+
+.btn-registro {
+    color: white;
+    background-color: brown;
+}
+
+.btn-registro:hover {
+    opacity: 50%;
+}
+
+.img-pre-registro {
+    max-width: 300px;
+}
+
+.cardi {
+    background-color: rgba(0, 0, 0, 0.7);
+    fill-opacity: 30%;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 26px 3px rgba(165, 42, 42, 0.75);
+    -moz-box-shadow: 2px 4px 26px 3px rgba(165, 42, 42, 0.75);
+    box-shadow: 2px 4px 26px 3px rgba(165, 42, 42, 0.75);
+    text-align: center;
+}
+
+th,
+td {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+hr {
+    background-color: brown;
+}
+a{
+    color: white;
+}

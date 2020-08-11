@@ -1,17 +1,36 @@
 <%--
   Created by IntelliJ IDEA.
-  User: LaBandaQueNoMienteYRoman
   Date: 30/07/2020
   Time: 10:20 a. m.
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
- PutoElquelOLEA
-  Y gei
-  </body>
+
+<head>
+    <meta charset="utf-8">
+    <link href="assets/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="body-login">
+<div class="container-login">
+    <div class="login">
+        <img src="assets/img/escudo.png" class="escudo-login">
+        <div class="form-login">
+            <form>
+                <h2>BIENVENIDO</h2>
+                <hr><br> Usuario
+                <input class="input-login" name="usuario" type="text"> Contraseña<br>
+                <input class="input-login" name="contraseña" type="password">
+                <a href=""><button class="button-login">Ingresar</button></a>
+            </form>
+        </div>
+
+    </div>
+    <div class="new"><a href="preRegistro.jsp">¿No estas registrado?</a></div>
+</div>
+</body>
+
 </html>
