@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class ServletRegistro extends HttpServlet {
-    //Codigo provisional generador de codigo
-    
+    //-------------------------------------Generador de ID-----------------------------------------
+    private String idx;
+
+    //---------------------------------------------------------------------------------------------
 
 
     @Override
