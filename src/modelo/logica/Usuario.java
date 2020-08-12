@@ -55,4 +55,13 @@ public class Usuario{
     public void setId(String id) {
         this.id = id;
     }
+
+    public void setAtributos(String nombrex, String apellidox,String correox,String contactox,String passwordx,String idx){
+        this.nombre=nombrex;
+        this.apellido=apellidox;
+        this.contacto=contactox;
+        this.correo=correox;
+        this.id=idx;
+        this.password=passwordx;
+    }
 }
