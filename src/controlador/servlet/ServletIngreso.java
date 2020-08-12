@@ -1,4 +1,4 @@
-package modelo.servlet;
+package controlador.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +14,6 @@ public class ServletIngreso extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        System.out.println("servlet ingreso funciona");
     }
 }
