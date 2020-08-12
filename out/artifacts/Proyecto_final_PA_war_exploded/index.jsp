@@ -19,9 +19,9 @@
     <div class="login">
         <img src="assets/img/escudo.png" class="escudo-login">
         <div class="form-login">
-            <form>
+            <form action="/Ingreso" method="post">
                 <h2>BIENVENIDO</h2>
-                <hr><br> Usuario
+                <hr><br> Usuario(ID)
                 <input class="input-login" name="usuario" type="text"> Contraseña<br>
                 <input class="input-login" name="contraseña" type="password">
                 <a href=""><button class="button-login">Ingresar</button></a>

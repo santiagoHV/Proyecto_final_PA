@@ -21,41 +21,41 @@
     <div class="row">
 
         <div class="offset-md-1 col-md-10 mt-4">
-            <form class=" form-registro ">
+            <form class=" form-registro " method="post" action="/Registro-completo">
                 <img src="assets/img/escudo.png" class="escudo-registro mb-5 mt-3">
                 <h2>Ingrese sus datos de registro</h2>
                 <hr>
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nombre completo</label>
-                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre completo">
+                        <input required type="text" class="form-control" id="inputNombre" placeholder="Nombre completo" name="nombre">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Apellidos</label>
-                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos">
+                        <input required type="text" class="form-control" id="inputApellido" placeholder="Apellidos" name="apellidos">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputCorreo">Correo electrónico</label>
-                        <input type="email" class="form-control" id="inputCorreo" placeholder="Correo electrónico">
+                        <input required type="email" class="form-control" id="inputCorreo" placeholder="Correo electrónico" name="correo">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputContacto">Número de contacto</label>
-                        <input type="number" class="form-control" id="inputContacto" placeholder="Número de contacto">
+                        <input required type="number" class="form-control" id="inputContacto" placeholder="Número de contacto" name="contacto">
                     </div>
                 </div>
                 <hr>
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña" placeholder="Contraseña">
+                        <input required type="password" class="form-control" id="inputContraseña" placeholder="Contraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña">
+                        <input required type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="contraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
-                        <input type="email" class="form-control" id="inputCorreo" value="1615165516" disabled>
+                        <input type="email" class="form-control" value="1615165516" disabled>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">
