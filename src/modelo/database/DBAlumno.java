@@ -1,0 +1,96 @@
+package modelo.database;
+
+import modelo.logica.Estudiante;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class DBAlumno {
+
+    DBConexion cn = new DBConexion();
+
+    public ResultSet getAlumnoById(String id) throws SQLException {
+        cn.DBConexion1();
+        PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
+                + " contraseña_a,"
+                + " nombre_a,"
+                + " apellido_a,"
+                + " correo_a,"
+                + " contacto_a"
+                + " FROM alumno "
+                + " WHERE id_a = ? ");
+        pstm.setString(1, id);
+
+        ResultSet res = pstm.executeQuery();
+        /*
+         res.close();
+         */
+
+        return res;
+    }
+
+    /**
+     * trae todos los registros de la tabla contactos
+     */
+    public ResultSet getAlumnos() throws SQLException {
+        cn.DBConexion1();
+        PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
+                + " nombre_a,"
+                + " correo_a"
+                + " FROM alumno ");
+        ResultSet res = pstm.executeQuery();
+        return res;
+    }
+
+    public void insertarAlumno(Estudiante a) {
+        cn.DBConexion1();
+        try {
+            PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
+                    + " contraseña_a,"
+                    + " nombre_a,"
+                    + " apellido_a,"
+                    + " correo_a,"
+                    + " contacto_a)"
+                    + " values(?,?,?,?,?,?)");
+            pstm.setString(1, a.getId());
+            pstm.setString(2, a.getPassword());
+            pstm.setString(3, a.getNombre());
+            pstm.setString(4, a.getApellido());
+            pstm.setString(5, a.getCorreo());
+            pstm.setString(6, a.getContacto());
+
+            pstm.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+    }
+
+    public void actualizarArma(Estudiante a) {
+        cn.DBConexion1();
+        try {
+            PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contraseña_a=?,"
+                    + " nombre_a=?,"
+                    + " apellido_a=?,"
+                    + " correo_a=?,"
+                    + " contacto_a=?"
+                    + " where id_a = ?");
+            pstm.setString(1, a.getPassword());
+            pstm.setString(2, a.getNombre());
+            pstm.setString(3, a.getApellido());
+            pstm.setString(4, a.getCorreo());
+            pstm.setString(5, a.getContacto());
+            pstm.setString(6, a.getId());
+
+            pstm.executeUpdate();
+
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+    }
+}
+

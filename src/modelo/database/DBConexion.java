@@ -1,24 +1,25 @@
 package modelo.database;
 
 import java.sql.*;
-
+/**
+ * Clase que permite conectar con mysql
+ * @author alejo
+ */
 public class DBConexion {
-
-    //INGRESAR DATOS DEPENDIENDO DE SU BASE DE DATOS
-    static String bd = "";
-    static String login = "";
-    static String password = "";
-
-
-    static String mensaje = "Arregle esa mierda";
+    static String bd = "proyecto";
+    static String login = "root";
+    static String password = "20191020008";
     static String url = "jdbc:mysql://localhost/"+bd+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    static String mensaje = "";
 
-    Connection conexion = null;
-
-    public DBConexion() {
+    private Connection conexion;
+    /**
+     * Constructor de la clase
+     */
+    public void DBConexion1() {
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection(url,login,password);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            setConexion(DriverManager.getConnection(url,login,password));
 
             if (conexion!=null){
                 System.out.println("Conexión a base de datos "+bd+" OK");
@@ -30,20 +31,29 @@ public class DBConexion {
         }
     }
 
+    /**
+     * Metodo para retornar mensajes de control
+     * @return
+     */
     public static String getMensaje() {
         return mensaje;
     }
 
+    /**
+     * Metodo para setear mensajes de control
+     * @param mensaje
+     */
     public static void setMensaje(String mensaje) {
         DBConexion.mensaje = mensaje;
     }
 
-    public Connection getConexion(){
+    public Connection getConexion() {
         return conexion;
     }
 
-    public void desconectar(){
-        conexion = null;
+    public void setConexion(Connection conexion) {
+        this.conexion = conexion;
     }
+
 
 }
