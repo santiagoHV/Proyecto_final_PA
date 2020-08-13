@@ -3,7 +3,7 @@ package modelo.database;
 import java.sql.*;
 /**
  * Clase que permite conectar con mysql
- * @author alejo
+ * @author
  */
 public class DBConexion {
     static String bd = "proyecto";
