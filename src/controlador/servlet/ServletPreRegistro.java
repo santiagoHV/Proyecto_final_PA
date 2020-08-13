@@ -49,7 +49,7 @@ public class ServletPreRegistro extends HttpServlet {
         }
 
         try {
-            idEstudianteNuevo=resIDEstudiante.getString("INGRESAR ATRIBUTO ID ESTUDIANTE");
+            idEstudianteNuevo=resIDEstudiante.getString("id_g");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class ServletPreRegistro extends HttpServlet {
         String idProfesorNuevo = "";
         try {
             resIDProfesor = conexionDB.getIdEstGenerado();
-            idProfesorNuevo = resIDProfesor.getString("INGRESAR ATRIBUTO ID PROFESOR");
+            idProfesorNuevo = resIDProfesor.getString("id_g");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
