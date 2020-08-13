@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -55,7 +56,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
-                        <input type="email" class="form-control" value="1615165516" disabled>
+                        <input type="email" class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">

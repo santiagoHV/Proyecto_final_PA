@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>Registro</servlet-name>
-        <servlet-class>modelo.servlet.ServletRegistro</servlet-class>
+        <servlet-class>controlador.servlet.ServletRegistro</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
@@ -14,10 +14,19 @@
     
     <servlet>
         <servlet-name>Ingreso</servlet-name>
-        <servlet-class>modelo.servlet.ServletIngreso</servlet-class>
+        <servlet-class>controlador.servlet.ServletIngreso</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Ingreso</servlet-name>
         <url-pattern>/Ingreso</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Pre-registro</servlet-name>
+        <servlet-class>controlador.servlet.ServletPreRegistro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Pre-registro</servlet-name>
+        <url-pattern>/Pre-registro</url-pattern>
     </servlet-mapping>
 </web-app>
