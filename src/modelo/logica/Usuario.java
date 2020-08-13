@@ -7,9 +7,18 @@ public class Usuario{
     protected String contacto;
     protected String password;
     protected String id;
+    protected String materia;
 
     public String getNombre() {
         return nombre;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 
     public void setNombre(String nombre) {
@@ -56,12 +65,6 @@ public class Usuario{
         this.id = id;
     }
 
-    public void setAtributos(String nombrex, String apellidox,String correox,String contactox,String passwordx,String idx){
-        this.nombre=nombrex;
-        this.apellido=apellidox;
-        this.contacto=contactox;
-        this.correo=correox;
-        this.id=idx;
-        this.password=passwordx;
+    public void setAtributos(){
     }
 }

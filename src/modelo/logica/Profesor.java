@@ -2,16 +2,13 @@ package modelo.logica;
 
 public class Profesor extends Usuario{
 
-    //PARA SETEAR DATOS DE PROFESOR (EXCEPTO MATERIA) USAR METODO DE USUARIO
-    //PARA SETEAR MATERIA DE PROFESOR UTILIZAR DIRECTAMENTE EL SET
-
-    private String Materia;
-
-    public String getMateria() {
-        return Materia;
-    }
-
-    public void setMateria(String materia) {
-        Materia = materia;
+    public void setAtributos(String nombre, String apellido,String correo,String contacto,String password,String id, String materia){
+        super.nombre=nombre;
+        super.apellido=apellido;
+        super.contacto=contacto;
+        super.correo=correo;
+        super.id=id;
+        super.password=password;
+        super.materia=materia;
     }
 }

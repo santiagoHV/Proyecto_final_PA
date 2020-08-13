@@ -2,5 +2,12 @@ package modelo.logica;
 
 public class Estudiante extends Usuario{
 
-    //PARA SETEAR DATOS DE ESTUDIANTE USAR METODO DE USUARIO
+    public void setAtributos(String nombrex, String apellidox, String correox, String contactox, String passwordx, String idx) {
+        super.nombre=nombrex;
+        super.apellido=apellidox;
+        super.contacto=contactox;
+        super.correo=correox;
+        super.id=idx;
+        super.password=password;
+    }
 }
