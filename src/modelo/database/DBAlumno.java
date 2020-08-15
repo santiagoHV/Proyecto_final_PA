@@ -68,7 +68,7 @@ public class DBAlumno {
 
     }
 
-    public void actualizarArma(Estudiante a) {
+    public void actualizarAlumno(Estudiante a) {
         cn.DBConexion1();
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contraseña_a=?,"
