@@ -13,7 +13,7 @@ public class DBProfesor{
     public ResultSet getProfesorById(String id) throws SQLException {
         cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
-                + " contraseña_p,"
+                + " contrasena_p,"
                 + " nombre_p,"
                 + " apellido_p,"
                 + " correo_p,"
@@ -48,7 +48,7 @@ public class DBProfesor{
         cn.DBConexion1();
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into profesor (id_p,"
-                    + " contraseña_p,"
+                    + " contrasena_p,"
                     + " nombre_p,"
                     + " apellido_p,"
                     + " correo_p,"
@@ -74,7 +74,7 @@ public class DBProfesor{
     public void actualizarProfesor(Profesor a) {
         cn.DBConexion1();
         try {
-            PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contraseña_p=?,"
+            PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"
                     + " nombre_p=?,"
                     + " apellido_p=?,"
                     + " correo_a=?,"
