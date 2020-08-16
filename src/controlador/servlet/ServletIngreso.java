@@ -40,7 +40,15 @@ public class ServletIngreso extends HttpServlet {
             }
 
         }else if(parametroInicialUsuario == "2"){
-            //es un estudiante
+            try {
+                if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,true)){
+                    //pasa
+                }else{
+                    response.sendRedirect("index.jsp");
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }else{
             response.sendRedirect("index.jsp");
         }

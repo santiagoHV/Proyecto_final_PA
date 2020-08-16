@@ -22,6 +22,7 @@
 
         <div class="offset-md-1 col-md-10 mt-4">
             <form class=" form-registro" method="post" action="/Registro-completo">
+                <input type="hidden" name="rol" value="profesor">
                 <img src="assets/img/escudo.png" class="escudo-registro mb-5 mt-3">
                 <h2>Ingrese sus datos de registro</h2>
                 <hr>
