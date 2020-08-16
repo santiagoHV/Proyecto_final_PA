@@ -44,7 +44,7 @@ public class DBAlumno {
     public void insertarAlumno(Estudiante a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
-                    + " contrasena_a,"
+                    + " contraseña_a,"
                     + " nombre_a,"
                     + " apellido_a,"
                     + " correo_a,"
@@ -67,7 +67,7 @@ public class DBAlumno {
 
     public void actualizarAlumno(Estudiante a) {
         try {
-            PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contrasena_a=?,"
+            PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contraseña_a=?,"
                     + " nombre_a=?,"
                     + " apellido_a=?,"
                     + " correo_a=?,"
