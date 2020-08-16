@@ -84,7 +84,7 @@ public class DBProfesor{
             pstm.setString(3, a.getApellido());
             pstm.setString(4, a.getCorreo());
             pstm.setString(5, a.getContacto());
-            pstm.setString(5, a.getMateria());
+            pstm.setString(6, a.getMateria());
             pstm.setString(7, a.getId());
 
             pstm.executeUpdate();
