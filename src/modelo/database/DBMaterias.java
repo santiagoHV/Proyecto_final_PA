@@ -68,14 +68,14 @@ public class DBMaterias {
                                 + " corte2,"
                                 + " corte3,"
                                 + " corteFinal"
-                                + " where codigo_e = ?"
-                                + " where materia_p = ?");
+                                + " where codigo_e = ?,"
+                                + " materia_p = ?");
                 pstm.setString(1, a.getPassword());
                 pstm.setString(2, a.getNombre());
                 pstm.setString(3, a.getApellido());
                 pstm.setString(4, a.getCorreo());
                 pstm.setString(5, a.getContacto());
-
+                pstm.setString(6, a.getContacto());
                 pstm.executeUpdate();
 
 
