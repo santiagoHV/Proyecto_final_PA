@@ -20,42 +20,58 @@ public class ServletIngreso extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+        //estudiantes 20201020---
+        //profesores 1020---
+
         String usuarioDeEntrada = request.getParameter("usuario");
         String contraseñaDeEntrada = request.getParameter("contraseña");
 
         String parametroInicialUsuario = usuarioDeEntrada.split("")[0];
 
         if(parametroInicialUsuario == "1"){
-            //es un profesor
+            try {
+                if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,false)){
+                    //pasa
+                }else{
+                    response.sendRedirect("index.jsp");
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
         }else if(parametroInicialUsuario == "2"){
             //es un estudiante
         }else{
             response.sendRedirect("index.jsp");
         }
-        
-        
-        
-        DBAlumno idaDB = new DBAlumno();
-        DBProfesor idpDB = new DBProfesor();
-        //estudiantes 20201020---
-        //profesores 1020---
-        //----------VALIDACION----------------------------------------------------------
+    }
+
+    boolean verificarUsuario(String usuario,String contraseña,boolean rol) throws SQLException {
+        /*rol => true = estudiante; false = profesor
+        */
+
+        DBAlumno idEstudianteDB = new DBAlumno();
+        DBProfesor idProfesorDB = new DBProfesor();
+        ResultSet res;
+        String DBdiferenciador;
+
         try {
-            ResultSet res = idaDB.getAlumnoById("*ID INGRESADO*");
-            if (res.getString("contraseña_a") != "*CONTRASEÑA INGRESADA*") {
-                response.sendRedirect("index.jsp");//no pasa
-            }// redireccion a home
-        } catch (SQLException throwables) {
-            try {
-                ResultSet res = idpDB.getProfesorById("ID INGRESADO");
-                if (res.getString("contraseña_p") != "*CONTRASEÑA INGRESADA*") {
-                    response.sendRedirect("index.jsp");
-                }// redireccion a home
-            }catch (SQLException throwables1) {
-                response.sendRedirect("index.jsp");
+            if(rol) {
+                res = idEstudianteDB.getAlumnoById(usuario);
+                DBdiferenciador = "a";
             }
+            else{
+                res = idProfesorDB.getProfesorById(usuario);
+                DBdiferenciador = "p";
+            }
+
+            if (res.getString("contraseña_"+DBdiferenciador) == contraseña) {
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException throwables) {
+            return false;
         }
-        //----------------------------------------------------------------------------------
     }
 }
