@@ -12,13 +12,8 @@ public class DBAlumno {
 
     public ResultSet getAlumnoById(String id) throws SQLException {
         cn.DBConexion1();
-<<<<<<< HEAD
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
                 + " contrasena_a,"
-=======
-        PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT ;id_a, "
-                + " contraseña_a,"
->>>>>>> 4d999c88f06f9f2d8e192d40ca69844b081ade7f
                 + " nombre_a,"
                 + " apellido_a,"
                 + " correo_a,"
