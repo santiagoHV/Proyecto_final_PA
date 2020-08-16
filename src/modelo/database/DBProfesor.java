@@ -37,7 +37,8 @@ public class DBProfesor{
     public ResultSet getProfesores() throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
                 + " nombre_p,"
-                + " correo_p"
+                + " correo_p,"
+                + " materia"
                 + " FROM profesor ");
         ResultSet res = pstm.executeQuery();
         return res;
