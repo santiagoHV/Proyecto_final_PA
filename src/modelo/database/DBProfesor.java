@@ -1,6 +1,7 @@
 package modelo.database;
 
 import modelo.logica.Profesor;
+import modelo.logica.Usuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,10 +9,9 @@ import java.sql.SQLException;
 
 public class DBProfesor{
 
-    DBConexion cn = new DBConexion();
+    static DBConexion cn = new DBConexion();
 
     public ResultSet getProfesorById(String id) throws SQLException {
-        cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
                 + " contrasena_p,"
                 + " nombre_p,"
@@ -35,7 +35,6 @@ public class DBProfesor{
      * trae todos los registros de la tabla contactos
      */
     public ResultSet getProfesores() throws SQLException {
-        cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
                 + " nombre_p,"
                 + " correo_p"
@@ -44,8 +43,7 @@ public class DBProfesor{
         return res;
     }
 
-    public void insertarProfesor(Profesor a) {
-        cn.DBConexion1();
+    public static void insertarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into profesor (id_p,"
                     + " contrasena_p,"
@@ -72,7 +70,6 @@ public class DBProfesor{
     }
 
     public void actualizarProfesor(Profesor a) {
-        cn.DBConexion1();
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"
                     + " nombre_p=?,"

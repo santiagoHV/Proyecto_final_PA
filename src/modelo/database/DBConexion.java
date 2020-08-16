@@ -8,7 +8,7 @@ import java.sql.*;
 public class DBConexion {
     static String bd = "proyecto";
     static String login = "root";
-    static String password = "20191020008";
+    static String password = "sultans2001*";
     static String url = "jdbc:mysql://localhost/"+bd+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     static String mensaje = "";
 
@@ -16,7 +16,7 @@ public class DBConexion {
     /**
      * Constructor de la clase
      */
-    public void DBConexion1() {
+    public DBConexion() {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             setConexion(DriverManager.getConnection(url,login,password));
@@ -26,8 +26,10 @@ public class DBConexion {
             }
         }catch(SQLException e){
             mensaje = e.getMessage();
+            System.out.println(mensaje);
         }catch(ClassNotFoundException e){
             mensaje = e.getMessage();
+            System.out.println(mensaje);
         }
     }
 

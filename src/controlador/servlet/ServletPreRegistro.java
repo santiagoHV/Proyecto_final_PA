@@ -21,12 +21,12 @@ public class ServletPreRegistro extends HttpServlet {
         DBMetodos conDB = new DBMetodos();
 
         if(request.getParameter("tipoDeUsuario").equals("estudiante")){
-            //request.getSession().setAttribute("ID",generarIdEstudiante(conDB));
-            request.getSession().setAttribute("ID",20001);
+            request.getSession().setAttribute("ID",generarIdEstudiante(conDB));
+            //request.getSession().setAttribute("ID",20001);
             response.sendRedirect("registroEstudiante.jsp");
         }else if(request.getParameter("tipoDeUsuario").equals("profesor")){
-            //request.getSession().setAttribute("ID",generarIdProfesor(conDB));
-            request.getSession().setAttribute("ID",12000);
+            request.getSession().setAttribute("ID",generarIdProfesor(conDB));
+            //request.getSession().setAttribute("ID",12000);
             response.sendRedirect("registroProfesor.jsp");
         }else{
             System.out.println("ERROR EN DISTRIBUCION DE REGISTRO");
@@ -39,18 +39,13 @@ public class ServletPreRegistro extends HttpServlet {
      * @return
      */
     String generarIdEstudiante(DBMetodos conexionDB){
-        ResultSet resIDEstudiante= null;
+        ResultSet resIDEstudiante;
         String idEstudianteNuevo = "";
         try {
             resIDEstudiante = conexionDB.getIdEstGenerado();
-        } catch (SQLException throwables) {
-
-            throwables.printStackTrace();
-        }
-
-        try {
             idEstudianteNuevo=resIDEstudiante.getString("id_g");
         } catch (SQLException throwables) {
+
             throwables.printStackTrace();
         }
         idEstudianteNuevo=Integer.toString(Integer.parseInt(idEstudianteNuevo)+1);
@@ -64,11 +59,13 @@ public class ServletPreRegistro extends HttpServlet {
      * @return
      */
     String generarIdProfesor(DBMetodos conexionDB) {
-        ResultSet resIDProfesor = null;
+        ResultSet resIDProfesor;
         String idProfesorNuevo = "";
         try {
-            resIDProfesor = conexionDB.getIdEstGenerado();
+            resIDProfesor = conexionDB.getIdProfGenerado();
+            System.out.println(resIDProfesor);
             idProfesorNuevo = resIDProfesor.getString("id_g");
+            System.out.println("id profe: "+idProfesorNuevo);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -11,7 +11,6 @@ public class DBAlumno {
     DBConexion cn = new DBConexion();
 
     public ResultSet getAlumnoById(String id) throws SQLException {
-        cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
                 + " contrasena_a,"
                 + " nombre_a,"
@@ -34,7 +33,6 @@ public class DBAlumno {
      * trae todos los registros de la tabla contactos
      */
     public ResultSet getAlumnos() throws SQLException {
-        cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
                 + " nombre_a,"
                 + " correo_a"
@@ -44,7 +42,6 @@ public class DBAlumno {
     }
 
     public void insertarAlumno(Estudiante a) {
-        cn.DBConexion1();
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
                     + " contrasena_a,"
@@ -69,7 +66,6 @@ public class DBAlumno {
     }
 
     public void actualizarAlumno(Estudiante a) {
-        cn.DBConexion1();
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contrasena_a=?,"
                     + " nombre_a=?,"

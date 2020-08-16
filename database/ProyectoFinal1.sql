@@ -33,6 +33,7 @@ pk_cargo int(3) primary key,
 id_g varchar(15)
 );
 
-insert into generador_id values ('2','10020000');
-select  pk_cargo, id_g from generador_id; 
+insert into generador_id values (2,'10020000');
+select  pk_cargo, id_g from generador_id WHERE pk_cargo = 2; 
 drop table profesor;
+drop database proyecto 

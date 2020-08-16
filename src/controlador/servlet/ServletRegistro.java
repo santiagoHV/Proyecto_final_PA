@@ -1,5 +1,7 @@
 package controlador.servlet;
+import modelo.database.DBAlumno;
 import modelo.database.DBMetodos;
+import modelo.database.DBProfesor;
 import modelo.logica.Estudiante;
 import modelo.logica.Profesor;
 import modelo.logica.Usuario;
@@ -23,11 +25,13 @@ public class ServletRegistro extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Usuario nuevoUsuario = crearUsuario(request.getParameter("rol"),request.getParameter("nombre"),request.getParameter("apelllidos"),request.getParameter("correo"),
+        DBProfesor dataBaseProfesor = new DBProfesor();
+        DBAlumno dataBaseAlumno = new DBAlumno();
+        Usuario nuevoUsuario = crearUsuario(request.getParameter("rol"),request.getParameter("nombre"),request.getParameter("apellidos"),request.getParameter("correo"),
                 request.getParameter("contacto"),request.getParameter("contraseña"),request.getParameter("id"),request.getParameter("materia"));
 
-        //CODIGO PARA MANDAR EL OBJETO "nuevoUsuario" A LA BASE DE DATOS
-        response.sendRedirect("*ACA VA EL HOME*");
+        DBProfesor.insertarProfesor(nuevoUsuario);
+        response.sendRedirect("home.jsp");
     }
 
     /**
