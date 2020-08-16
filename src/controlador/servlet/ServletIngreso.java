@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class ServletIngreso extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        System.out.println(req.getParameter("contraseña"));
     }
 
     @Override
@@ -24,14 +24,15 @@ public class ServletIngreso extends HttpServlet {
         //profesores 1020---
 
         String usuarioDeEntrada = request.getParameter("usuario");
-        String contraseñaDeEntrada = request.getParameter("contraseña");
+        String contraseñaDeEntrada = request.getParameter("password");
 
         String parametroInicialUsuario = usuarioDeEntrada.split("")[0];
+        System.out.println(usuarioDeEntrada+"  "+parametroInicialUsuario+" "+contraseñaDeEntrada);
 
-        if(parametroInicialUsuario == "1"){
+        if(parametroInicialUsuario.equals( "1")){
             try {
                 if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,false)){
-                    //pasa
+                    response.sendRedirect("home.jsp");
                 }else{
                     response.sendRedirect("index.jsp");
                 }
@@ -39,15 +40,18 @@ public class ServletIngreso extends HttpServlet {
                 throwables.printStackTrace();
             }
 
-        }else if(parametroInicialUsuario == "2"){
+        }else if(parametroInicialUsuario.equals("2")){
+            System.out.println("entra al if1");
             try {
-                if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,true)){
-                    //pasa
+                System.out.println(verificarUsuarioPRUEBA(usuarioDeEntrada,contraseñaDeEntrada,true));
+                if(verificarUsuarioPRUEBA(usuarioDeEntrada,contraseñaDeEntrada,true)){
+
+                    response.sendRedirect("home.jsp");
                 }else{
                     response.sendRedirect("index.jsp");
                 }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            } catch (/*SQLException throwables*/Exception e) {
+                //throwables.printStackTrace();
             }
         }else{
             response.sendRedirect("index.jsp");
@@ -79,6 +83,17 @@ public class ServletIngreso extends HttpServlet {
                 return false;
             }
         } catch (SQLException throwables) {
+            return false;
+        }
+    }
+    boolean verificarUsuarioPRUEBA(String usuario,String contraseña,boolean rol){
+        if(usuario.equals("20201020001")){
+            System.out.println("entro el usuario");
+            if(contraseña.equals("12345"))return true;
+            else return false;
+
+        }else{
+            System.out.println("no pasa el user");
             return false;
         }
     }
