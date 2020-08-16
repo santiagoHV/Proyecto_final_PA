@@ -25,6 +25,15 @@
     color: white;
 }
 
+.body-home {
+    background: url(img/vivero.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
 .container-login {
     background-color: rgba(0, 0, 0, 0.7);
     width: 400px;
@@ -45,6 +54,15 @@
     -webkit-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+}
+
+.container-home {
+    background-color: rgba(0, 0, 0, 0.7);
+    fill-opacity: 30%;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.85);
 }
 
 .login {
@@ -103,6 +121,11 @@
     height: 100px;
 }
 
+.escudo-navbar {
+    width: 150px;
+    height: 50px;
+}
+
 .thead-lighti {
     background-color: brown;
     color: white;
@@ -131,6 +154,19 @@
     text-align: center;
 }
 
+.navbarUD {
+    background-color: brown;
+}
+
+.text-slides {
+    background-color: rgba(0, 0, 0, 0.7);
+    fill-opacity: 30%;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 4px 26px 3px rgba(0, 0, 0, 0.85);
+}
+
 th,
 td {
     color: white;
@@ -142,7 +178,4 @@ h2 {
 
 hr {
     background-color: brown;
-}
-a{
-    color: white;
 }
