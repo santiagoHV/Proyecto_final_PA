@@ -51,7 +51,7 @@ public class DBProfesor{
                     + " nombre_p,"
                     + " apellido_p,"
                     + " correo_p,"
-                    + " contacto_p,"
+                    + " contacto_p,"  
                     + " materia)"
                     + " values(?,?,?,?,?,?,?)");
             pstm.setString(1, a.getId());
