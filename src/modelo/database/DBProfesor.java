@@ -70,7 +70,7 @@ public class DBProfesor{
 
     }
 
-    public void actualizarProfesor(Usuario a) {
+    public static void actualizarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"
                     + " nombre_p=?,"

@@ -34,6 +34,14 @@ id_g varchar(15)
 );
 
 insert into generador_id values (2,'10020000');
+
+insert into profesor (materia,nombre_p) values ('Teoría de sistemas','Por Asignar');
+insert into profesor (materia,nombre_p) values ('Calculo Multivariado','Por Asignar');
+insert into profesor (materia,nombre_p) values ('Ecuaciones diferenciales','Por Asignar');
+insert into profesor (materia,nombre_p) values ('Fisica (Electromagnetismo)','Por Asignar');
+insert into profesor (materia,nombre_p) values ('Programación avanzada','Por Asignar');
+insert into profesor (materia,nombre_p) values ('Ingles II','Por Asignar');
+
 select  pk_cargo, id_g from generador_id WHERE pk_cargo = 2; 
 drop table profesor;
 drop database proyecto 
