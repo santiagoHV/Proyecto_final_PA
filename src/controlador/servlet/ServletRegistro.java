@@ -27,11 +27,19 @@ public class ServletRegistro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DBProfesor dataBaseProfesor = new DBProfesor();
         DBAlumno dataBaseAlumno = new DBAlumno();
+        System.out.println(request.getParameter("id"));
         Usuario nuevoUsuario = crearUsuario(request.getParameter("rol"),request.getParameter("nombre"),request.getParameter("apellidos"),request.getParameter("correo"),
                 request.getParameter("contacto"),request.getParameter("contraseña"),request.getParameter("id"),request.getParameter("materia"));
 
-        DBProfesor.actualizarProfesor(nuevoUsuario);
-        //Crear profesores con datos por asignar para luego actualizalos ;v
+        if(request.getParameter("rol").equals("estudiante")){
+            dataBaseAlumno.insertarAlumno(nuevoUsuario);
+            System.out.println("entro el if estudiante");
+        }
+        else{
+            dataBaseProfesor.actualizarProfesor(nuevoUsuario);
+            System.out.println("nel");
+        }
+
         response.sendRedirect("home.jsp");
     }
 

@@ -22,11 +22,9 @@ public class ServletPreRegistro extends HttpServlet {
 
         if(request.getParameter("tipoDeUsuario").equals("estudiante")){
             request.getSession().setAttribute("ID",generarIdEstudiante(conDB));
-            //request.getSession().setAttribute("ID",20001);
             response.sendRedirect("registroEstudiante.jsp");
         }else if(request.getParameter("tipoDeUsuario").equals("profesor")){
             request.getSession().setAttribute("ID",generarIdProfesor(conDB));
-            //request.getSession().setAttribute("ID",12000);
             response.sendRedirect("registroProfesor.jsp");
         }else{
             System.out.println("ERROR EN DISTRIBUCION DE REGISTRO");
@@ -48,7 +46,7 @@ public class ServletPreRegistro extends HttpServlet {
 
             throwables.printStackTrace();
         }
-        idEstudianteNuevo=Integer.toString(Integer.parseInt(idEstudianteNuevo)+1);
+        idEstudianteNuevo=Long.toString(Long.parseLong(idEstudianteNuevo)+1);
         conexionDB.insertarSiguienteIDEst(idEstudianteNuevo);
         return idEstudianteNuevo;
     }
@@ -63,9 +61,7 @@ public class ServletPreRegistro extends HttpServlet {
         String idProfesorNuevo = "";
         try {
             resIDProfesor = conexionDB.getIdProfGenerado();
-            System.out.println(resIDProfesor);
             idProfesorNuevo = resIDProfesor.getString("id_g");
-            System.out.println("id profe: "+idProfesorNuevo);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

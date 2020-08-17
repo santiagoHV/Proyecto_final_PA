@@ -44,7 +44,7 @@ public class DBProfesor{
         return res;
     }
 
-    public static void insertarProfesor(Usuario a) {
+    public void insertarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into profesor (id_p,"
                     + " contrasena_p,"
@@ -70,12 +70,12 @@ public class DBProfesor{
 
     }
 
-    public static void actualizarProfesor(Usuario a) {
+    public void actualizarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"
                     + " nombre_p=?,"
                     + " apellido_p=?,"
-                    + " correo_a=?,"
+                    + " correo_p=?,"
                     + " contacto_p=?,"
                     + " id_p=?"
                     + " where materia = ?");
