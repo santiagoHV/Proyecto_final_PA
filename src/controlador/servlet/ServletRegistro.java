@@ -31,6 +31,7 @@ public class ServletRegistro extends HttpServlet {
                 request.getParameter("contacto"),request.getParameter("contraseña"),request.getParameter("id"),request.getParameter("materia"));
 
         DBProfesor.insertarProfesor(nuevoUsuario);
+        //Crear profesores con datos por asignar para luego actualizalos ;v
         response.sendRedirect("home.jsp");
     }
 
