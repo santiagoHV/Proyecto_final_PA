@@ -70,22 +70,22 @@ public class DBProfesor{
 
     }
 
-    public void actualizarProfesor(Profesor a) {
+    public static void actualizarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"
                     + " nombre_p=?,"
                     + " apellido_p=?,"
                     + " correo_a=?,"
                     + " contacto_p=?,"
-                    + " materia=?"
-                    + " where id_p = ?");
+                    + " id_p=?"
+                    + " where materia = ?");
             pstm.setString(1, a.getPassword());
             pstm.setString(2, a.getNombre());
             pstm.setString(3, a.getApellido());
             pstm.setString(4, a.getCorreo());
             pstm.setString(5, a.getContacto());
-            pstm.setString(5, a.getMateria());
-            pstm.setString(7, a.getId());
+            pstm.setString(6, a.getId());
+            pstm.setString(7, a.getMateria());
 
             pstm.executeUpdate();
 
