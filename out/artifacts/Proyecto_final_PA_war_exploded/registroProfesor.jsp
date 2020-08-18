@@ -48,16 +48,16 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña" placeholder="Contraseña">
+                        <input type="text" class="form-control" id="inputContraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="contraseña">
+                        <input type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="password">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
-                        <input class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
-                        <input type="hidden" name="id" value="<%=request.getSession().getAttribute("ID")%>">
+                        <input class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled >
+                        <input type="hidden" name="id" value="<%=request.getSession().getAttribute("ID")%>" name="id">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">

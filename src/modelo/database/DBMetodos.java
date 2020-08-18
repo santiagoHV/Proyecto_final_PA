@@ -36,6 +36,7 @@ public class DBMetodos {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update generador_id set id_g = ?"
                                                                          + " where pk_cargo = 1");
             pstm.setString(1,idx);
+            pstm.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
         }
@@ -45,6 +46,7 @@ public class DBMetodos {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update generador_id set id_g = ?"
                                                                          + " where pk_cargo = 2");
             pstm.setString(1,idx);
+            pstm.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
         }

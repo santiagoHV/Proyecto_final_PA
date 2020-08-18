@@ -28,18 +28,18 @@ public class ServletRegistro extends HttpServlet {
         DBProfesor dataBaseProfesor = new DBProfesor();
         DBAlumno dataBaseAlumno = new DBAlumno();
         System.out.println(request.getParameter("id"));
-        System.out.println(request.getParameter("contraseña"));
+        System.out.println(request.getParameter("password"));
         Usuario nuevoUsuario = crearUsuario(request.getParameter("rol"),request.getParameter("nombre"),request.getParameter("apellidos"),request.getParameter("correo"),
-                request.getParameter("contacto"),request.getParameter("contraseña"),request.getParameter("id"),request.getParameter("materia"));
-
+                request.getParameter("contacto"),request.getParameter("password"),request.getParameter("id"),request.getParameter("materia"));
+        request.getSession().setAttribute("rol",request.getParameter("rol"));
+        request.getSession().setAttribute("id",request.getParameter("id"));
         if(request.getParameter("rol").equals("estudiante")){
             dataBaseAlumno.insertarAlumno(nuevoUsuario);
         }
         else{
             dataBaseProfesor.actualizarProfesor(nuevoUsuario);
         }
-
-
+        response.sendRedirect("home.jsp");
     }
 
     /**
