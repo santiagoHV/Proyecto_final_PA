@@ -22,9 +22,11 @@ public class ServletPreRegistro extends HttpServlet {
 
         if(request.getParameter("tipoDeUsuario").equals("estudiante")){
             request.getSession().setAttribute("ID",generarIdEstudiante(conDB));
+            //request.getSession().setAttribute("ID",20001);
             response.sendRedirect("registroEstudiante.jsp");
         }else if(request.getParameter("tipoDeUsuario").equals("profesor")){
             request.getSession().setAttribute("ID",generarIdProfesor(conDB));
+            //request.getSession().setAttribute("ID",12000);
             response.sendRedirect("registroProfesor.jsp");
         }else{
             System.out.println("ERROR EN DISTRIBUCION DE REGISTRO");
@@ -37,16 +39,21 @@ public class ServletPreRegistro extends HttpServlet {
      * @return
      */
     String generarIdEstudiante(DBMetodos conexionDB){
-        ResultSet resIDEstudiante;
+        ResultSet resIDEstudiante= null;
         String idEstudianteNuevo = "";
         try {
             resIDEstudiante = conexionDB.getIdEstGenerado();
-            idEstudianteNuevo=resIDEstudiante.getString("id_g");
         } catch (SQLException throwables) {
 
             throwables.printStackTrace();
         }
-        idEstudianteNuevo=Long.toString(Long.parseLong(idEstudianteNuevo)+1);
+
+        try {
+            idEstudianteNuevo=resIDEstudiante.getString("id_g");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        idEstudianteNuevo=Integer.toString(Integer.parseInt(idEstudianteNuevo)+1);
         conexionDB.insertarSiguienteIDEst(idEstudianteNuevo);
         return idEstudianteNuevo;
     }
@@ -57,10 +64,10 @@ public class ServletPreRegistro extends HttpServlet {
      * @return
      */
     String generarIdProfesor(DBMetodos conexionDB) {
-        ResultSet resIDProfesor;
+        ResultSet resIDProfesor = null;
         String idProfesorNuevo = "";
         try {
-            resIDProfesor = conexionDB.getIdProfGenerado();
+            resIDProfesor = conexionDB.getIdEstGenerado();
             idProfesorNuevo = resIDProfesor.getString("id_g");
         } catch (SQLException throwables) {
             throwables.printStackTrace();

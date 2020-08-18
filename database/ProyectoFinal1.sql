@@ -32,23 +32,7 @@ create table generador_id(
 pk_cargo int(3) primary key,
 id_g varchar(15)
 );
-
-insert into profesor (materia,nombre_p) values ('TGS','Por Asignar');
-insert into profesor (materia,nombre_p) values ('CM','Por Asignar');
-insert into profesor (materia,nombre_p) values ('ED','Por Asignar');
-insert into profesor (materia,nombre_p) values ('FEM','Por Asignar');
-insert into profesor (materia,nombre_p) values ('PA','Por Asignar');
-insert into profesor (materia,nombre_p) values ('I2','Por Asignar');
-
-insert into profesor values();
-
-update generador_id set id_g = '1020001' where pk_cargo = 2;
-select* from profesor;
-select* from generador_id;
-select* from alumno;
-
-insert into generador_id values(2,"102000");
-
+insert into generador_id values ('1','20201020000');
+insert into generador_id values ('2','1020000');
 select  pk_cargo, id_g from generador_id; 
-drop table alumno;
-drop database proyecto 
+drop table profesor;
