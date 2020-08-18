@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
-                        <input required type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="contraseña">
+                        <input required type="text" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="contraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>

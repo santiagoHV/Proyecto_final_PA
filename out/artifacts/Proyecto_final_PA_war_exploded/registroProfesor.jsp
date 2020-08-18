@@ -56,6 +56,7 @@
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
                         <input class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
+                        <input type="hidden" name="id" value="<%=request.getSession().getAttribute("ID")%>">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">
