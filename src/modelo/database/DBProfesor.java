@@ -1,6 +1,7 @@
 package modelo.database;
 
 import modelo.logica.Profesor;
+import modelo.logica.Usuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,10 +9,9 @@ import java.sql.SQLException;
 
 public class DBProfesor{
 
-    DBConexion cn = new DBConexion();
+    static DBConexion cn = new DBConexion();
 
     public ResultSet getProfesorById(String id) throws SQLException {
-        cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
                 + " contrasena_p,"
                 + " nombre_p,"
@@ -35,24 +35,23 @@ public class DBProfesor{
      * trae todos los registros de la tabla contactos
      */
     public ResultSet getProfesores() throws SQLException {
-        cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
                 + " nombre_p,"
-                + " correo_p"
+                + " correo_p,"
+                + " materia"
                 + " FROM profesor ");
         ResultSet res = pstm.executeQuery();
         return res;
     }
 
-    public void insertarProfesor(Profesor a) {
-        cn.DBConexion1();
+    public void insertarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into profesor (id_p,"
                     + " contrasena_p,"
                     + " nombre_p,"
                     + " apellido_p,"
                     + " correo_p,"
-                    + " contacto_p,"
+                    + " contacto_p,"  
                     + " materia)"
                     + " values(?,?,?,?,?,?,?)");
             pstm.setString(1, a.getId());
@@ -71,23 +70,22 @@ public class DBProfesor{
 
     }
 
-    public void actualizarProfesor(Profesor a) {
-        cn.DBConexion1();
+    public void actualizarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"
                     + " nombre_p=?,"
                     + " apellido_p=?,"
-                    + " correo_a=?,"
+                    + " correo_p=?,"
                     + " contacto_p=?,"
-                    + " materia=?"
-                    + " where id_p = ?");
+                    + " id_p=?"
+                    + " where materia = ?");
             pstm.setString(1, a.getPassword());
             pstm.setString(2, a.getNombre());
             pstm.setString(3, a.getApellido());
             pstm.setString(4, a.getCorreo());
             pstm.setString(5, a.getContacto());
-            pstm.setString(5, a.getMateria());
-            pstm.setString(7, a.getId());
+            pstm.setString(6, a.getId());
+            pstm.setString(7, a.getMateria());
 
             pstm.executeUpdate();
 

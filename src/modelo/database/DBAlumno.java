@@ -1,6 +1,7 @@
 package modelo.database;
 
 import modelo.logica.Estudiante;
+import modelo.logica.Usuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,9 +12,8 @@ public class DBAlumno {
     DBConexion cn = new DBConexion();
 
     public ResultSet getAlumnoById(String id) throws SQLException {
-        cn.DBConexion1();
-        PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT ;id_a, "
-                + " contraseña_a,"
+        PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
+                + " contrasena_a,"
                 + " nombre_a,"
                 + " apellido_a,"
                 + " correo_a,"
@@ -34,7 +34,6 @@ public class DBAlumno {
      * trae todos los registros de la tabla contactos
      */
     public ResultSet getAlumnos() throws SQLException {
-        cn.DBConexion1();
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
                 + " nombre_a,"
                 + " correo_a"
@@ -43,17 +42,16 @@ public class DBAlumno {
         return res;
     }
 
-    public void insertarAlumno(Estudiante a) {
-        cn.DBConexion1();
+    public void insertarAlumno(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
-                    + " contraseña_a,"
+                    + " contrasena_a,"
                     + " nombre_a,"
                     + " apellido_a,"
                     + " correo_a,"
                     + " contacto_a)"
                     + " values(?,?,?,?,?,?)");
-            pstm.setString(1, a.getId());
+            pstm.setLong(1, Long.parseLong(a.getId()));
             pstm.setString(2, a.getPassword());
             pstm.setString(3, a.getNombre());
             pstm.setString(4, a.getApellido());
@@ -69,9 +67,8 @@ public class DBAlumno {
     }
 
     public void actualizarAlumno(Estudiante a) {
-        cn.DBConexion1();
         try {
-            PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contraseña_a=?,"
+            PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contrasena_a=?,"
                     + " nombre_a=?,"
                     + " apellido_a=?,"
                     + " correo_a=?,"

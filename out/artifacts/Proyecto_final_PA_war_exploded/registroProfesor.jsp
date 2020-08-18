@@ -19,7 +19,6 @@
 <div class="container mt-5 container-registro">
 
     <div class="row">
-
         <div class="offset-md-1 col-md-10 mt-4">
             <form class=" form-registro" method="post" action="/Registro-completo">
                 <input type="hidden" name="rol" value="profesor">
@@ -29,19 +28,19 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nombre completo</label>
-                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre completo">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre completo" name="nombre">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Apellidos</label>
-                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos">
+                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos" name="apellido">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputCorreo">Correo electrónico</label>
-                        <input type="email" class="form-control" id="inputCorreo" placeholder="Correo electrónico">
+                        <input type="email" class="form-control" id="inputCorreo" placeholder="Correo electrónico" name="correo">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputContacto">Número de contacto</label>
-                        <input type="number" class="form-control" id="inputContacto" placeholder="Número de contacto">
+                        <input type="number" class="form-control" id="inputContacto" placeholder="Número de contacto" name="contacto">
                     </div>
                 </div>
                 <hr>
@@ -52,11 +51,11 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña">
+                        <input type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="contraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
-                        <input type="email" class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled>
+                        <input class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">
@@ -116,9 +115,6 @@
                     </div>
                     <button class=" btn-registro  btn-lg btn-block mb-5" type="submit">REGISTRARME</button>
                 </div>
-        </div>
-
-
         </form>
     </div>
 
