@@ -41,6 +41,8 @@ drop table profesor;
 
 insert into generador_id values (2,'10020000');
 
+insert into generador_id values (2,'10020000');
+
 insert into profesor (materia,nombre_p) values ('TGS','Por Asignar');
 insert into profesor (materia,nombre_p) values ('CM','Por Asignar');
 insert into profesor (materia,nombre_p) values ('ED','Por Asignar');
@@ -50,5 +52,9 @@ insert into profesor (materia,nombre_p) values ('I2','Por Asignar');
 
 select  pk_cargo, id_g from generador_id WHERE pk_cargo = 2; 
 drop table profesor;
+<<<<<<< HEAD
+drop database proyecto 
+>>>>>>> parent of 69d649d... correcciones en registro
+=======
 drop database proyecto 
 >>>>>>> parent of 69d649d... correcciones en registro

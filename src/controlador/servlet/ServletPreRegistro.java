@@ -48,12 +48,15 @@ public class ServletPreRegistro extends HttpServlet {
             throwables.printStackTrace();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         try {
             idEstudianteNuevo=resIDEstudiante.getString("id_g");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+=======
+>>>>>>> parent of 69d649d... correcciones en registro
 =======
 >>>>>>> parent of 69d649d... correcciones en registro
         idEstudianteNuevo=Integer.toString(Integer.parseInt(idEstudianteNuevo)+1);
@@ -75,6 +78,9 @@ public class ServletPreRegistro extends HttpServlet {
 =======
             resIDProfesor = conexionDB.getIdProfGenerado();
             System.out.println(resIDProfesor);
+<<<<<<< HEAD
+>>>>>>> parent of 69d649d... correcciones en registro
+=======
 >>>>>>> parent of 69d649d... correcciones en registro
             idProfesorNuevo = resIDProfesor.getString("id_g");
             System.out.println("id profe: "+idProfesorNuevo);

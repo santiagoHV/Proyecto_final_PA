@@ -37,6 +37,9 @@ public class DBMetodos {
         ResultSet res = pstm.executeQuery();
         res.next();
         System.out.println("res = "+res);
+<<<<<<< HEAD
+>>>>>>> parent of 69d649d... correcciones en registro
+=======
 >>>>>>> parent of 69d649d... correcciones en registro
         return res;
     }
