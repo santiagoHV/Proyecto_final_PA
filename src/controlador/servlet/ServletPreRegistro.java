@@ -21,12 +21,12 @@ public class ServletPreRegistro extends HttpServlet {
         DBMetodos conDB = new DBMetodos();
 
         if(request.getParameter("tipoDeUsuario").equals("estudiante")){
-            //request.getSession().setAttribute("ID",generarIdEstudiante(conDB));
-            request.getSession().setAttribute("ID",20001);
+            request.getSession().setAttribute("ID",generarIdEstudiante(conDB));
+            //request.getSession().setAttribute("ID",20001);
             response.sendRedirect("registroEstudiante.jsp");
         }else if(request.getParameter("tipoDeUsuario").equals("profesor")){
-            //request.getSession().setAttribute("ID",generarIdProfesor(conDB));
-            request.getSession().setAttribute("ID",12000);
+            request.getSession().setAttribute("ID",generarIdProfesor(conDB));
+            //request.getSession().setAttribute("ID",12000);
             response.sendRedirect("registroProfesor.jsp");
         }else{
             System.out.println("ERROR EN DISTRIBUCION DE REGISTRO");

@@ -11,13 +11,12 @@ public class DBMetodos {
     public DBMetodos() {
         cn = new DBConexion();
     }
-
     //-------------------PARTE SALDARRIAGA NO TOCARXD-------------------------------------------------------------------------------
     public ResultSet getIdEstGenerado() throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT pk_cargo, "
                                                                      + "id_g"
                                                                      + " FROM generador_id"
-                                                                     + " WHERE pkcargo = 1 ");
+                                                                     + " WHERE pk_cargo = 1 ");
         ResultSet res = pstm.executeQuery();
         return res;
     }
@@ -25,7 +24,7 @@ public class DBMetodos {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT pk_cargo, "
                                                                      + "id_g"
                                                                      + " FROM generador_id"
-                                                                     + " WHERE pkcargo = 2 ");
+                                                                     + " WHERE pk_cargo = 2 ");
         ResultSet res = pstm.executeQuery();
         return res;
     }
