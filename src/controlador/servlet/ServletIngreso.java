@@ -20,14 +20,13 @@ public class ServletIngreso extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //estudiantes 20201020---
+        //estudiantes 202010--
         //profesores 1020---
 
         String usuarioDeEntrada = request.getParameter("usuario");
         String contraseñaDeEntrada = request.getParameter("password");
 
         String parametroInicialUsuario = usuarioDeEntrada.split("")[0];
-        System.out.println(usuarioDeEntrada+"  "+parametroInicialUsuario+" "+contraseñaDeEntrada);
 
         if(parametroInicialUsuario.equals( "1")){
             try {
@@ -41,17 +40,15 @@ public class ServletIngreso extends HttpServlet {
             }
 
         }else if(parametroInicialUsuario.equals("2")){
-            System.out.println("entra al if1");
             try {
-                System.out.println(verificarUsuarioPRUEBA(usuarioDeEntrada,contraseñaDeEntrada,true));
-                if(verificarUsuarioPRUEBA(usuarioDeEntrada,contraseñaDeEntrada,true)){
+                if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,true)){
 
                     response.sendRedirect("home.jsp");
                 }else{
                     response.sendRedirect("index.jsp");
                 }
-            } catch (/*SQLException throwables*/Exception e) {
-                //throwables.printStackTrace();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
         }else{
             response.sendRedirect("index.jsp");
@@ -66,9 +63,11 @@ public class ServletIngreso extends HttpServlet {
         DBProfesor idProfesorDB = new DBProfesor();
         ResultSet res;
         String DBdiferenciador;
+        System.out.println(rol);
 
         try {
             if(rol) {
+                System.out.println("entra if estudiante");
                 res = idEstudianteDB.getAlumnoById(usuario);
                 DBdiferenciador = "a";
             }
@@ -76,24 +75,15 @@ public class ServletIngreso extends HttpServlet {
                 res = idProfesorDB.getProfesorById(usuario);
                 DBdiferenciador = "p";
             }
-
-            if (res.getString("contraseña_"+DBdiferenciador) == contraseña) {
+            res.next();
+            System.out.println(res.getString("contrasena_"+DBdiferenciador));
+            if (res.getString("contrasena_"+DBdiferenciador).equals(contraseña)) {
                 return true;
             }else{
                 return false;
             }
         } catch (SQLException throwables) {
-            return false;
-        }
-    }
-    boolean verificarUsuarioPRUEBA(String usuario,String contraseña,boolean rol){
-        if(usuario.equals("20201020001")){
-            System.out.println("entro el usuario");
-            if(contraseña.equals("12345"))return true;
-            else return false;
-
-        }else{
-            System.out.println("no pasa el user");
+            System.out.println(throwables);
             return false;
         }
     }

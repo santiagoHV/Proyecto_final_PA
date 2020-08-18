@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Apellidos</label>
-                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos" name="apellido">
+                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos" name="apellidos">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputCorreo">Correo electrónico</label>
@@ -48,7 +48,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input type="text" class="form-control" id="inputContraseña">
+                        <input type="password" class="form-control" id="inputContraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>

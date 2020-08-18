@@ -20,7 +20,7 @@ public class DBAlumno {
                 + " contacto_a"
                 + " FROM alumno "
                 + " WHERE id_a = ? ");
-        pstm.setString(1, id);
+        pstm.setInt(1, Integer.parseInt(id));
 
         ResultSet res = pstm.executeQuery();
         /*
