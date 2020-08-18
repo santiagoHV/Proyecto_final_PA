@@ -23,7 +23,7 @@
                 <h2>BIENVENIDO</h2>
                 <hr><br> Usuario(ID)
                 <input class="input-login" name="usuario" type="text"> Contraseña<br>
-                <input class="input-login" name="password" type="text">
+                <input class="input-login" name="password" type="password">
                 <a href=""><button class="button-login">Ingresar</button></a>
             </form>
         </div>
