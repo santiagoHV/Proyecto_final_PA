@@ -18,29 +18,17 @@ public class DBMetodos {
                                                                      + " FROM generador_id"
                                                                      + " WHERE pk_cargo = 1 ");
         ResultSet res = pstm.executeQuery();
+        res.next();
         return res;
     }
     public ResultSet getIdProfGenerado() throws SQLException {
-<<<<<<< HEAD
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT pk_cargo, "
                                                                      + "id_g"
                                                                      + " FROM generador_id"
                                                                      + " WHERE pk_cargo = 2 ");
         ResultSet res = pstm.executeQuery();
-=======
-        PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT pk_cargo, id_g "
-                                                                     + "FROM generador_id "
-                                                                     + "WHERE pk_cargo = ?");
-        pstm.setString(1,"2");
-
-
-        ResultSet res = pstm.executeQuery();
         res.next();
         System.out.println("res = "+res);
-<<<<<<< HEAD
->>>>>>> parent of 69d649d... correcciones en registro
-=======
->>>>>>> parent of 69d649d... correcciones en registro
         return res;
     }
     public void insertarSiguienteIDEst(String idx) {

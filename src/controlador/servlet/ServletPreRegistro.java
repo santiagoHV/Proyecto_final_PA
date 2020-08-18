@@ -41,24 +41,15 @@ public class ServletPreRegistro extends HttpServlet {
     String generarIdEstudiante(DBMetodos conexionDB){
         ResultSet resIDEstudiante= null;
         String idEstudianteNuevo = "";
+
         try {
             resIDEstudiante = conexionDB.getIdEstGenerado();
-        } catch (SQLException throwables) {
-
-            throwables.printStackTrace();
-        }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        try {
-            idEstudianteNuevo=resIDEstudiante.getString("id_g");
+            System.out.println(resIDEstudiante.getString("id_g"));
+            idEstudianteNuevo =  resIDEstudiante.getString("id_g");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+            System.out.println("se rompio"+throwables);
         }
-=======
->>>>>>> parent of 69d649d... correcciones en registro
-=======
->>>>>>> parent of 69d649d... correcciones en registro
         idEstudianteNuevo=Integer.toString(Integer.parseInt(idEstudianteNuevo)+1);
         conexionDB.insertarSiguienteIDEst(idEstudianteNuevo);
         return idEstudianteNuevo;
@@ -73,15 +64,7 @@ public class ServletPreRegistro extends HttpServlet {
         ResultSet resIDProfesor = null;
         String idProfesorNuevo = "";
         try {
-<<<<<<< HEAD
-            resIDProfesor = conexionDB.getIdEstGenerado();
-=======
             resIDProfesor = conexionDB.getIdProfGenerado();
-            System.out.println(resIDProfesor);
-<<<<<<< HEAD
->>>>>>> parent of 69d649d... correcciones en registro
-=======
->>>>>>> parent of 69d649d... correcciones en registro
             idProfesorNuevo = resIDProfesor.getString("id_g");
             System.out.println("id profe: "+idProfesorNuevo);
         } catch (SQLException throwables) {

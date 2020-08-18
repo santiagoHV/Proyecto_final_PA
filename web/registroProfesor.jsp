@@ -56,16 +56,8 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <input class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
                         <input type="hidden" name="id" value="<%=request.getSession().getAttribute("ID")%>">
-=======
-                        <input type="email" class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
->>>>>>> parent of 69d649d... correcciones en registro
-=======
-                        <input type="email" class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
->>>>>>> parent of 69d649d... correcciones en registro
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">
