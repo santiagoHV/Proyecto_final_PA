@@ -19,7 +19,7 @@ public class DBAlumno {
                 + " contacto_a"
                 + " FROM alumno "
                 + " WHERE id_a = ? ");
-        pstm.setString(1, id);
+        pstm.setInt(1, Integer.parseInt(id));
 
         ResultSet res = pstm.executeQuery();
         /*
@@ -65,7 +65,7 @@ public class DBAlumno {
 
     }
 
-    public void actualizarAlumno(Estudiante a) {
+    public void actualizarAlumno(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contraseña_a=?,"
                     + " nombre_a=?,"
