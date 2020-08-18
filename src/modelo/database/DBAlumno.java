@@ -1,7 +1,6 @@
 package modelo.database;
 
 import modelo.logica.Estudiante;
-import modelo.logica.Usuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,16 +41,16 @@ public class DBAlumno {
         return res;
     }
 
-    public void insertarAlumno(Usuario a) {
+    public void insertarAlumno(Estudiante a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
-                    + " contrasena_a,"
+                    + " contraseña_a,"
                     + " nombre_a,"
                     + " apellido_a,"
                     + " correo_a,"
                     + " contacto_a)"
                     + " values(?,?,?,?,?,?)");
-            pstm.setLong(1, Long.parseLong(a.getId()));
+            pstm.setString(1, a.getId());
             pstm.setString(2, a.getPassword());
             pstm.setString(3, a.getNombre());
             pstm.setString(4, a.getApellido());
@@ -68,7 +67,7 @@ public class DBAlumno {
 
     public void actualizarAlumno(Estudiante a) {
         try {
-            PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contrasena_a=?,"
+            PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contraseña_a=?,"
                     + " nombre_a=?,"
                     + " apellido_a=?,"
                     + " correo_a=?,"

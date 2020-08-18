@@ -32,7 +32,23 @@ create table generador_id(
 pk_cargo int(3) primary key,
 id_g varchar(15)
 );
+<<<<<<< HEAD
 insert into generador_id values ('1','20201020000');
 insert into generador_id values ('2','1020000');
 select  pk_cargo, id_g from generador_id; 
 drop table profesor;
+=======
+
+insert into generador_id values (2,'10020000');
+
+insert into profesor (materia,nombre_p) values ('TGS','Por Asignar');
+insert into profesor (materia,nombre_p) values ('CM','Por Asignar');
+insert into profesor (materia,nombre_p) values ('ED','Por Asignar');
+insert into profesor (materia,nombre_p) values ('FEM','Por Asignar');
+insert into profesor (materia,nombre_p) values ('PA','Por Asignar');
+insert into profesor (materia,nombre_p) values ('I2','Por Asignar');
+
+select  pk_cargo, id_g from generador_id WHERE pk_cargo = 2; 
+drop table profesor;
+drop database proyecto 
+>>>>>>> parent of 69d649d... correcciones en registro
