@@ -58,8 +58,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
-                        <input class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled>
-                        <input type="hidden" name="id" value="<%=request.getSession().getAttribute("ID")%>">
+                        <input type="email" class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled>
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">
@@ -126,6 +125,9 @@
                     </div>
                     <button class=" btn-registro  btn-lg btn-block mb-5" type="submit">REGISTRARME</button>
                 </div>
+        </div>
+
+
         </form>
     </div>
 

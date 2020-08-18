@@ -19,6 +19,7 @@
 <div class="container mt-5 container-registro">
 
     <div class="row">
+
         <div class="offset-md-1 col-md-10 mt-4">
             <form class=" form-registro" method="post" action="/Registro-completo">
                 <input type="hidden" name="rol" value="profesor">
@@ -55,8 +56,12 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
+<<<<<<< HEAD
                         <input class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
                         <input type="hidden" name="id" value="<%=request.getSession().getAttribute("ID")%>">
+=======
+                        <input type="email" class="form-control" value="<%=request.getSession().getAttribute("ID")%>" disabled name="id">
+>>>>>>> parent of 69d649d... correcciones en registro
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label class="mt-4">
@@ -116,6 +121,9 @@
                     </div>
                     <button class=" btn-registro  btn-lg btn-block mb-5" type="submit">REGISTRARME</button>
                 </div>
+        </div>
+
+
         </form>
     </div>
 

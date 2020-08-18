@@ -27,6 +27,7 @@ public class ServletRegistro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DBProfesor dataBaseProfesor = new DBProfesor();
         DBAlumno dataBaseAlumno = new DBAlumno();
+<<<<<<< HEAD
         System.out.println(request.getParameter("id"));
         System.out.println(request.getParameter("contraseña"));
         Usuario nuevoUsuario = crearUsuario(request.getParameter("rol"),request.getParameter("nombre"),request.getParameter("apellidos"),request.getParameter("correo"),
@@ -39,6 +40,13 @@ public class ServletRegistro extends HttpServlet {
             dataBaseProfesor.actualizarProfesor(nuevoUsuario);
         }
 
+=======
+        Usuario nuevoUsuario = crearUsuario(request.getParameter("rol"),request.getParameter("nombre"),request.getParameter("apellidos"),request.getParameter("correo"),
+                request.getParameter("contacto"),request.getParameter("contraseña"),request.getParameter("id"),request.getParameter("materia"));
+
+        DBProfesor.actualizarProfesor(nuevoUsuario);
+        //Crear profesores con datos por asignar para luego actualizalos ;v
+>>>>>>> parent of 69d649d... correcciones en registro
         response.sendRedirect("home.jsp");
     }
 
