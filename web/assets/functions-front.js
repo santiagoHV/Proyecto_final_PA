@@ -7,7 +7,7 @@ function distribuirUsuario(papel) {
 }
 
 function validarFormulario() {
-    var formulario = document.addForm;
+    var formulario = document.getElementById("addForm");
     if (formulario.inputContraseña.value != formulario.inputContraseña2.value) {
         alert("Contraseñas iguales so");
         formulario.inputContraseña.value = "";

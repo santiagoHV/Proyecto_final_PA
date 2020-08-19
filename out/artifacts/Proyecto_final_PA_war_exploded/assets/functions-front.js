@@ -1,17 +1,19 @@
 function distribuirUsuario(papel) {
-    if(papel === "estudiante"){
+    if (papel === "estudiante") {
         document.getElementById("verificacionPreRegistro").value = "estudiante";
-    }else{
+    } else {
         document.getElementById("verificacionPreRegistro").value = "profesor";
     }
 }
 
- function validarFormulario() {
-    if(document.getElementById(inputContraseña)!=document.getElementById(inputContraseña2)){
-        alert("CONTRASEÑAS DIFERENTES")
-        console.log("CONTRASEÑAS DIFERENTES");
+function validarFormulario() {
+    var formulario = document.getElementById("addForm");
+    if (formulario.inputContraseña.value != formulario.inputContraseña2.value) {
+        alert("Contraseñas iguales so");
+        formulario.inputContraseña.value = "";
+        formulario.inputContraseña1.value = "";
         return false;
-    }else{
-        return true;
+    } else {
+        return true
     }
- }
+}
