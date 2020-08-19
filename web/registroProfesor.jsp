@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%String profesores[][] = (String[][]) request.getSession().getAttribute("lista de profesores");%>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +30,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nombre completo</label>
-                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre completo" name="nombre">
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre completo" name="nombre" >
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Apellidos</label>
@@ -82,28 +83,28 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <th scope="row"><input type="radio" name="materia" value="TGS" class="form-control"></th>
-                                <td>Teoría de sistemas</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><input type="radio" name="materia" value="CM" class="form-control"></th>
+                                <th scope="row"><input type="radio" name="materia" value="CM" class="form-control" <%=profesores[0][2]%>></th>
                                 <td>Calculo Multivariado</td>
                             </tr>
                             <tr>
-                                <th scope="row"><input type="radio" name="materia" value="ED" class="form-control"></th>
+                                <th scope="row"><input type="radio" name="materia" value="ED" class="form-control" <%=profesores[1][2]%>></th>
                                 <td>Ecuaciones diferenciales</td>
                             </tr>
                             <tr>
-                                <th scope="row"><input type="radio" name="materia" value="FEM" class="form-control"></th>
+                                <th scope="row"><input type="radio" name="materia" value="FEM" class="form-control" <%=profesores[2][2]%>></th>
                                 <td>Fisica (Electromagnetismo)</td>
                             </tr>
                             <tr>
-                                <th scope="row"><input type="radio" name="materia" value="PA" class="form-control"></th>
+                                <th scope="row"><input type="radio" name="materia" value="I2" class="form-control" <%=profesores[3][2]%>></th>
+                                <td>Ingles II</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><input type="radio" name="materia" value="PA" class="form-control" <%=profesores[4][2]%>></th>
                                 <td>Programación avanzada</td>
                             </tr>
                             <tr>
-                                <th scope="row"><input type="radio" name="materia" value="I2" class="form-control"></th>
-                                <td>Ingles II</td>
+                                <th scope="row"><input type="radio" name="materia" value="TGS" class="form-control" <%=profesores[5][2]%>></th>
+                                <td>Teoría de sistemas</td>
                             </tr>
                             </tbody>
                         </table>
@@ -118,8 +119,6 @@
                     <button class=" btn-registro  btn-lg btn-block mb-5" type="submit">REGISTRARME</button>
                 </div>
         </div>
-
-
         </form>
     </div>
 

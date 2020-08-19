@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%String profesores[][] = (String[][]) request.getSession().getAttribute("lista de profesores");%>
 <!DOCTYPE html>
 <html>
 
@@ -85,34 +85,34 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Analisis de sistemas</td>
-                                <td>el gran anselmo vega</td>
-                            </tr>
-                            <tr>
                                 <th scope="row">2</th>
                                 <td>Calculo Multivariado</td>
-                                <td>La mas hermosa</td>
+                                <td><%=profesores[0][0]%></td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Ecuaciones diferenciales</td>
-                                <td>Thanos</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Fisica (Electromagnetismo)</td>
-                                <td>Robado</td>
+                                <td><%=profesores[1][0]%></td>
                             </tr>
                             <tr>
                                 <th scope="row">5</th>
                                 <td>Programación avanzada</td>
-                                <td>Nadie importante</td>
+                                <td><%=profesores[2][0]%></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Fisica (Electromagnetismo)</td>
+                                <td><%=profesores[3][0]%></td>
                             </tr>
                             <tr>
                                 <th scope="row">6</th>
                                 <td>Ingles II</td>
-                                <td>Saldarriaga</td>
+                                <td><%=profesores[4][0]%></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Teoría de sistemas</td>
+                                <td><%=profesores[5][0]%></td>
                             </tr>
                             </tbody>
                         </table>
