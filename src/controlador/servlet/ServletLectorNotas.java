@@ -36,14 +36,12 @@ public class ServletLectorNotas extends HttpServlet {
                 throwables.printStackTrace();
             }
         }
-
-
-
-
-
     }
-    ArrayList<Notas> distribuirNotas(ResultSet res){
+    ArrayList<Notas> distribuirNotas(ResultSet res) throws SQLException {
         ArrayList<Notas> notas= new ArrayList<Notas>();
+        while (res.next()){
+
+        }
         return notas;
     }
 }
