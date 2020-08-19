@@ -1,6 +1,7 @@
 package modelo.database;
 
 import modelo.logica.Estudiante;
+import modelo.logica.Usuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -41,7 +42,7 @@ public class DBAlumno {
         return res;
     }
 
-    public void insertarAlumno(Estudiante a) {
+    public void insertarAlumno(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
                     + " contraseña_a,"
