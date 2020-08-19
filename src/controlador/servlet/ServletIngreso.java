@@ -93,14 +93,14 @@ public class ServletIngreso extends HttpServlet {
         String calificaciones[][] = new String[3][2];
             if(rol.equals("1")){
                 calificaciones[0][0] = "Ver mi curso";
-                calificaciones[0][1] = "/Lector notas";
+                calificaciones[0][1] = "/Lector-notas";
                 calificaciones[1][0] = "Editar/Subir notas";
                 calificaciones[1][1] = "Editor-notas";
                 calificaciones[2][0] = "Pensum";
                 calificaciones[2][0] = "*INSERTAR LINK DEL PENSUM";
             }else if(rol.equals("2")){
                 calificaciones[0][0] = "Notas parciales";
-                calificaciones[0][1] = "/Lector notas";
+                calificaciones[0][1] = "/Lector-notas";
                 calificaciones[1][0] = "Notas finales";
                 calificaciones[1][1] = "/Editor-notas";
                 calificaciones[2][0] = "Horario";

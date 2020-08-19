@@ -7,7 +7,7 @@ function distribuirUsuario(papel) {
 }
 
  function validarFormulario() {
-    if(document.getElementById(inputContraseña)!=document.getElementById(inputContraseña1)){
+    if(document.getElementById(inputContraseña)!=document.getElementById(inputContraseña2)){
         alert("CONTRASEÑAS DIFERENTES")
         console.log("CONTRASEÑAS DIFERENTES");
         return false;

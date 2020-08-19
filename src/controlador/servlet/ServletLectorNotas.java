@@ -18,7 +18,7 @@ public class ServletLectorNotas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String rol = req.getParameter("rol");
+        String rol = "estudiante";//req.getParameter("rol");
         ArrayList<Notas> notas= new ArrayList<Notas>();
         DBMaterias conexionDB =new DBMaterias();
         ResultSet res = null;
@@ -36,11 +36,22 @@ public class ServletLectorNotas extends HttpServlet {
                 throwables.printStackTrace();
             }
         }
+        try {
+            notas = distribuirNotas(res);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        int i = 0;
+        while (notas.get(i) == null) System.out.println(notas.get(i).getEstudiante());
+        req.getSession().setAttribute("notas",notas);
     }
+
+
     ArrayList<Notas> distribuirNotas(ResultSet res) throws SQLException {
         ArrayList<Notas> notas= new ArrayList<Notas>();
         while (res.next()){
-            //notas.add(new Notas(res.getString("materia")));
+            notas.add(new Notas(res.getString("materia_p"),res.getString("codigo_e"),res.getInt("corte1"),
+                    res.getInt("corte2"),res.getInt("corte3")));
         }
         return notas;
     }

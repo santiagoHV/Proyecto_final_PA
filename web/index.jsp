@@ -24,6 +24,7 @@
                 <hr><br> Usuario(ID)
                 <input class="input-login" name="usuario" type="text"> Contraseña<br>
                 <input class="input-login" name="password" type="password">
+                <input type="hidden" name="rol" >
                 <a href=""><button class="button-login">Ingresar</button></a>
             </form>
         </div>
