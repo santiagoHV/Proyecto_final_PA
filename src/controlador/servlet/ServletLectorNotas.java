@@ -40,7 +40,7 @@ public class ServletLectorNotas extends HttpServlet {
     ArrayList<Notas> distribuirNotas(ResultSet res) throws SQLException {
         ArrayList<Notas> notas= new ArrayList<Notas>();
         while (res.next()){
-
+            //notas.add(new Notas(res.getString("materia")));
         }
         return notas;
     }
