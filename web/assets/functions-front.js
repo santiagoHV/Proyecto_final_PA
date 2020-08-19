@@ -7,7 +7,7 @@ function distribuirUsuario(papel) {
 }
 
  function validarFormulario() {
-    var formulario = document.addForm;
+    var formulario = document.get;
     if(formulario.inputContraseña.value!=formulario.inputContraseña2.value){
         //CODIGO DE MENSAJE DE ERROR
         formulario.inputContraseña.value="";
