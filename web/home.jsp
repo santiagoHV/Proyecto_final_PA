@@ -31,7 +31,7 @@
                 <a class="nav-link" href="#">Perfil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Horario</a>
+                <a class="nav-link" href="<%=menu[2][1]%>"><%=menu[2][0]%></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

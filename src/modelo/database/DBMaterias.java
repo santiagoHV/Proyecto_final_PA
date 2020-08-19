@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class DBMaterias {
     static DBConexion cn = new DBConexion();
 
-        public ResultSet getNotasByEstudiante(String codigo_e) throws SQLException {
+        public ResultSet getNotasByEstudiante(int codigo_e) throws SQLException {
             PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT materia_p, "
                     + " corte1,"
                     + " corte2,"
@@ -18,7 +18,7 @@ public class DBMaterias {
                     + " corteFinal"
                     + " FROM materia "
                     + " WHERE codigo_e = ? ");
-            pstm.setString(1, codigo_e);
+            pstm.setInt(1, codigo_e);
 
             ResultSet res = pstm.executeQuery();
             return res;
