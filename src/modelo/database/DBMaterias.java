@@ -2,6 +2,7 @@ package modelo.database;
 
 import modelo.logica.Profesor;
 import modelo.logica.Usuario;
+import modelo.logica.Notas;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,7 +39,7 @@ public class DBMaterias {
             return res;
         }
 
-        public static void insertarNotas(Usuario a) {
+        public static void insertarNotas(Notas a) {
             try {
                 PreparedStatement pstm = cn.getConexion().prepareStatement("insert into materia (materia_p,"
                         + " codigo_e,"
@@ -47,12 +48,12 @@ public class DBMaterias {
                         + " corte3,"
                         + " corteFinal)"
                         + " values(?,?,?,?,?,?)");
-                pstm.setString(1, a.getId());
-                pstm.setString(2, a.getPassword());
-                pstm.setString(3, a.getNombre());
-                pstm.setString(4, a.getApellido());
-                pstm.setString(5, a.getCorreo());
-                pstm.setString(6, a.getContacto());
+                pstm.setString(1, a.getMateria());
+                pstm.setString(2, a.getEstudiante());
+                pstm.setInt(3, a.getPrimerCorte());
+                pstm.setInt(4, a.getSegundoCorte());
+                pstm.setInt(5, a.getTercerCorte());
+                pstm.setDouble(6, a.getNotaFinal());
 
                 pstm.executeUpdate();
 
@@ -62,7 +63,7 @@ public class DBMaterias {
 
         }
 
-        public void actualizarNotas(Profesor a) {
+        public void actualizarNotas(Notas a) {
             try {
                         PreparedStatement pstm = cn.getConexion().prepareStatement("update materia set corte1=?,"
                                 + " corte2,"
@@ -70,12 +71,12 @@ public class DBMaterias {
                                 + " corteFinal"
                                 + " where codigo_e = ?,"
                                 + " materia_p = ?");
-                pstm.setString(1, a.getPassword());
-                pstm.setString(2, a.getNombre());
-                pstm.setString(3, a.getApellido());
-                pstm.setString(4, a.getCorreo());
-                pstm.setString(5, a.getContacto());
-                pstm.setString(6, a.getContacto());
+                pstm.setInt(3, a.getPrimerCorte());
+                pstm.setInt(4, a.getSegundoCorte());
+                pstm.setInt(5, a.getTercerCorte());
+                pstm.setDouble(6, a.getNotaFinal());
+                pstm.setString(5, a.getEstudiante());
+                pstm.setString(6, a.getMateria());
                 pstm.executeUpdate();
 
 
