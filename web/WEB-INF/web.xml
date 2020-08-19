@@ -29,4 +29,12 @@
         <servlet-name>Pre-registro</servlet-name>
         <url-pattern>/Pre-registro</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Lector-notas</servlet-name>
+        <servlet-class>controlador.servlet.ServletLectorNotas</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Lector-notas</servlet-name>
+        <url-pattern>/Lector-notas</url-pattern>
+    </servlet-mapping>
 </web-app>
