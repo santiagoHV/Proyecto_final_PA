@@ -39,7 +39,8 @@ public class ServletRegistro extends HttpServlet {
         else{
             dataBaseProfesor.actualizarProfesor(nuevoUsuario);
         }
-        response.sendRedirect("home.jsp");
+
+        response.sendRedirect("index.jsp");
     }
 
     /**
@@ -63,6 +64,4 @@ public class ServletRegistro extends HttpServlet {
             return new Profesor(nombre,apellido,correo,contacto,password,id,materia);
         }
     }
-
-
 }

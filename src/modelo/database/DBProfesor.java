@@ -37,6 +37,7 @@ public class DBProfesor{
     public ResultSet getProfesores() throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
                 + " nombre_p,"
+                + " apellido_p,"
                 + " correo_p,"
                 + " materia"
                 + " FROM profesor ");
@@ -75,7 +76,7 @@ public class DBProfesor{
             PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"
                     + " nombre_p=?,"
                     + " apellido_p=?,"
-                    + " correo_a=?,"
+                    + " correo_p=?,"
                     + " contacto_p=?,"
                     + " id_p=?"
                     + " where materia = ?");

@@ -3,6 +3,7 @@ package controlador.servlet;
 import modelo.database.DBAlumno;
 import modelo.database.DBMetodos;
 import modelo.database.DBProfesor;
+import org.jetbrains.annotations.NotNull;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +16,6 @@ import java.sql.SQLException;
 public class ServletIngreso extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(req.getParameter("contraseña"));
     }
 
     @Override
@@ -31,8 +31,10 @@ public class ServletIngreso extends HttpServlet {
         if(parametroInicialUsuario.equals( "1")){
             try {
                 if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,false)){
+                    request.getSession().setAttribute("menu",serviciosHome("1"));
                     response.sendRedirect("home.jsp");
                 }else{
+                    request.getSession().setAttribute("menu",serviciosHome("2"));
                     response.sendRedirect("index.jsp");
                 }
             } catch (SQLException throwables) {
@@ -42,7 +44,7 @@ public class ServletIngreso extends HttpServlet {
         }else if(parametroInicialUsuario.equals("2")){
             try {
                 if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,true)){
-
+                    request.getSession().setAttribute("menu",serviciosHome("2"));
                     response.sendRedirect("home.jsp");
                 }else{
                     response.sendRedirect("index.jsp");
@@ -86,5 +88,31 @@ public class ServletIngreso extends HttpServlet {
             System.out.println(throwables);
             return false;
         }
+    }
+    String[][] serviciosHome(String rol){
+        String calificaciones[][] = new String[3][2];
+            if(rol.equals("1")){
+                calificaciones[0][0] = "Ver mi curso";
+                calificaciones[0][1] = "/Lector notas";
+                calificaciones[1][0] = "Editar/Subir notas";
+                calificaciones[1][1] = "Editor notas";
+                calificaciones[2][0] = "Pensum";
+                calificaciones[2][0] = "*INSERTAR LINK DEL PENSUM";
+            }else if(rol.equals("2")){
+                calificaciones[0][0] = "Notas parciales";
+                calificaciones[0][1] = "/Lector notas";
+                calificaciones[1][0] = "Notas finales";
+                calificaciones[1][1] = "Editor notas";
+                calificaciones[2][0] = "Horario";
+                calificaciones[2][0] = "*INSERTAR LINK DEL HORARIO";
+            }else{
+                System.out.println("error en distribucion de menus al home");
+            }
+        return calificaciones;
+    }
+    String escritoBievenida(String rol){
+        if(rol.equals("1"))return "Este es el nuevo sistema de gestión académica para estudiantes de tercer semestre de ingeniería de sistemas de la universidad distrital Francisco Jose de Caldas, en este aplicativo tendrá acceso a su curso, lectura de notas y edición de las mismas; esto junto con el pensum de su materia.";
+        else if(rol.equals("2")) return "Este es el nuevo sistema de gestión académica para estudiantes de tercer semestre de ingeniería de sistemas de la universidad distrital Francisco Jose de Caldas, en este aplicativo tendrá acceso a sus notas parciales, finales y acumuladas; esto junto con su horario el cual le fue asignado para el semestre en curso.";
+        else return "";
     }
 }

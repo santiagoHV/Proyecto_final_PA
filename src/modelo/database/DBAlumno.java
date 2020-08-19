@@ -46,7 +46,7 @@ public class DBAlumno {
     public void insertarAlumno(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
-                    + " contraseña_a,"
+                    + " contrasena_a,"
                     + " nombre_a,"
                     + " apellido_a,"
                     + " correo_a,"
