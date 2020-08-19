@@ -7,11 +7,14 @@ function distribuirUsuario(papel) {
 }
 
  function validarFormulario() {
-    if(document.getElementById(inputContraseña)!=document.getElementById(inputContraseña1)){
-        alert("CONTRASEÑAS DIFERENTES")
-        console.log("CONTRASEÑAS DIFERENTES");
+    var formulario = document.addForm;
+    if(formulario.inputContraseña.value!=formulario.inputContraseña2.value){
+        alert("Contraseñas iguales so");
+        formulario.inputContraseña.value="";
+        formulario.inputContraseña1.value="";
         return false;
-    }else{
-        return true;
+    }
+    else {
+        return true
     }
  }
