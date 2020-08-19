@@ -6,6 +6,7 @@ import modelo.logica.Usuario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import modelo.logica.Usuario;
 
 public class DBAlumno {
 

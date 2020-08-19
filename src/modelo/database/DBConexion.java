@@ -8,7 +8,7 @@ import java.sql.*;
 public class DBConexion {
     static String bd = "proyecto";
     static String login = "root";
-    static String password = "sultans2001*";
+    static String password = "hola123";
     static String url = "jdbc:mysql://localhost/"+bd+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     static String mensaje = "";
 
