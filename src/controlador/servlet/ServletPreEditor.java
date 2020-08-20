@@ -44,6 +44,12 @@ public class ServletPreEditor extends HttpServlet {
         resp.sendRedirect("editorNotas.jsp");
     }
 
+    /**
+     * Trae la materia segun el id del profesor
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     String obtenerMateria(String id) throws SQLException {
         DBProfesor conexionDB = new DBProfesor();
         ResultSet res = conexionDB.getProfesorById(id);

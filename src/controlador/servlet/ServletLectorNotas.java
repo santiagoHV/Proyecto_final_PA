@@ -66,6 +66,13 @@ public class ServletLectorNotas extends HttpServlet {
         req.getSession().setAttribute("notas",notas);
         resp.sendRedirect("lectorNotas.jsp");
     }
+
+    /**
+     * Trae la materia segun el profesor
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     String obtenerMateria(String id) throws SQLException {
         DBProfesor conexionDB = new DBProfesor();
         ResultSet res = conexionDB.getProfesorById(id);

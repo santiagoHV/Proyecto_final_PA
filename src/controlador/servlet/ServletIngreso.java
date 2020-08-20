@@ -140,12 +140,25 @@ public class ServletIngreso extends HttpServlet {
         else if(rol.equals("2")) return "Este es el nuevo sistema de gestión académica para estudiantes de tercer semestre de ingeniería de sistemas de la universidad distrital Francisco Jose de Caldas, en este aplicativo tendrá acceso a sus notas parciales, finales y acumuladas; esto junto con su horario el cual le fue asignado para el semestre en curso.";
         else return "";
     }
+
+    /**
+     * Trae la materio correspondiente segun el id del profesor
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     String obtenerMateria(String id) throws SQLException {
         DBProfesor conexionDB = new DBProfesor();
         ResultSet res = conexionDB.getProfesorById(id);
         res.next();
         return res.getString("materia");
     }
+
+    /**
+     * Llama el link del pensum segun la materia
+     * @param materia
+     * @return
+     */
     String obtenerLinkPensum(String materia){
         switch (materia){
             case "CM": return "http://ingenieria1.udistrital.edu.co/bannersis/pensum/creditos/pdf/3/Calculo_multivariado.pdf";
