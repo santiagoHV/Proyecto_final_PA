@@ -8,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%ArrayList<Notas> notas= (ArrayList<Notas>) request.getSession().getAttribute("notas");%>
+<%String[][] menu = (String[][]) request.getSession().getAttribute("menu");%>
 <!DOCTYPE html>
 <html>
 
@@ -32,15 +33,15 @@
                 <a class="nav-link" href="#">Perfil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Horario</a>
+                <a class="nav-link" href="<%=menu[2][1]%>"><%=menu[2][0]%></a>
             </li>
             <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Calificaciones
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Notas parciales</a>
-                    <a class="dropdown-item" href="#">Notas finales</a>
+                    <a class="dropdown-item" href="<%=menu[0][1]%>"><%=menu[0][0]%></a>
+                    <a class="dropdown-item" href="<%=menu[1][1]%>"><%=menu[1][0]%></a>
                 </div>
             </li>
         </ul>

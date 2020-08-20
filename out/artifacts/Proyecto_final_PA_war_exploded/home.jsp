@@ -47,8 +47,7 @@
 </nav>
 <div class=" container container-home p-5 mt-3">
     <h3>Bienvenido</h3>
-    <p>Este es el nuevo sistema de gestion academica para estudiantes de tercer semestre de ingeniería de sistemas de la universidad distrital Francisco Jose de Caldas, en este aplicativo tendrá acceso a sus notas parciales, finales y acumuladas; esto
-        junto con su horario el cual le fue asignado para el semestre en curso.</p>
+    <p><%=request.getSession().getAttribute("escrito")%></p>
     <div class="row">
         <div id="carouselExampleCaptions" class="carousel slide offset-1 col-10" data-ride="carousel">
             <ol class="carousel-indicators">

@@ -1,20 +1,18 @@
-<%@ page import="modelo.logica.Notas" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: santi
   Date: 20/08/2020
-  Time: 12:15 a. m.
+  Time: 8:29 a. m.
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%ArrayList<Notas> notas= (ArrayList<Notas>) request.getSession().getAttribute("notas");%>
 <%String[][] menu = (String[][]) request.getSession().getAttribute("menu");%>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <link href="assets/style.css" rel="stylesheet" type="text/css">
+    <link href="stylesLogin.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
@@ -26,16 +24,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link" href="#">Inicio </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Perfil</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="<%=menu[2][1]%>"><%=menu[2][0]%></a>
             </li>
-            <li class="nav-item dropdown active">
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Calificaciones
                 </a>
@@ -48,35 +46,7 @@
     </div>
 </nav>
 <div class=" container container-home p-5 mt-3">
-    <form method="post" action="/Edicion-hecha">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">Estudiante</th>
-            <th scope="col">Primer Corte (35%)</th>
-            <th scope="col">Segundo Corte (35%)</th>
-            <th scope="col">Tercer Corte (30%)</th>
-            <th scope="col">Acumulado</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <%for(int i = 0;i < notas.size();i++){%>
-            <input type="hidden" name="estudiante<%=i%>" value="<%=notas.get(i).getEstudiante()%>">
-        <tr>
-            <th scope="row"><%=notas.get(i).getEstudiante()%></th>
-            <td><input required  type="number" name="primeraNota<%=i%>" value="<%=notas.get(i).getPrimerCorte()%>" min="0" max="50"></td>
-            <td><input required type="number" name="segundaNota<%=i%>" value="<%=notas.get(i).getSegundoCorte()%>" min="0" max="50"></td>
-            <td><input required type="number" name="terceraNota<%=i%>" value="<%=notas.get(i).getTercerCorte()%>" min="0" max="50"></td>
-            <td><input type="number" value="<%=notas.get(i).getNotaFinal()%>" disabled></td>
-        </tr>
-        <%}%>
-
-        </tbody>
-
-    </table>
-    <input type="submit" value="Enviar notas" class=" btn-registro  btn-lg btn-block mb-1">
-    </form>
+    <img src="assets/img/horario.jpeg" width="100%" height="100%">
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
