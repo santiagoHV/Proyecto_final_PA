@@ -34,6 +34,15 @@
     color: white;
 }
 
+.body-notas {
+    background: url(img/la40.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
 .container-login {
     background-color: rgba(0, 0, 0, 0.7);
     width: 400px;

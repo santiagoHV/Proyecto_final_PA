@@ -23,7 +23,7 @@ public class DBProfesor{
                 + " nombre_p,"
                 + " apellido_p,"
                 + " correo_p,"
-                + " contacto_p"
+                + " contacto_p,"
                 + " materia"
                 + " FROM profesor "
                 + " WHERE id_p = ? ");

@@ -1,9 +1,9 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="modelo.logica.Notas" %><%--
+<%@ page import="modelo.logica.Notas" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: santi
-  Date: 19/08/2020
-  Time: 10:21 p. m.
+  Date: 20/08/2020
+  Time: 12:15 a. m.
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -47,15 +47,11 @@
     </div>
 </nav>
 <div class=" container container-home p-5 mt-3">
+    <form method="post" action="/Edicion-hecha">
     <table class="table table-striped">
         <thead>
-
         <tr>
-            <%if(request.getSession().getAttribute("rol").equals("estudiante")){%>
-            <th scope="col">Materia</th>
-            <%}else{%>
-            <th scope="col">Estudiantes</th>
-            <%}%>
+            <th scope="col">Estudiante</th>
             <th scope="col">Primer Corte (35%)</th>
             <th scope="col">Segundo Corte (35%)</th>
             <th scope="col">Tercer Corte (30%)</th>
@@ -63,22 +59,23 @@
         </tr>
         </thead>
         <tbody>
+
         <%for(int i = 0;i < notas.size();i++){%>
+            <input type="hidden" name="estudiante<%=i%>">
         <tr>
-            <%if(request.getSession().getAttribute("rol").equals("estudiante")){%>
-            <th scope="row"><%=notas.get(i).getMateria()%></th>
-            <%}else{%>
             <th scope="row"><%=notas.get(i).getEstudiante()%></th>
-            <%}%>
-            <td><%=notas.get(i).getPrimerCorte()%></td>
-            <td><%=notas.get(i).getSegundoCorte()%></td>
-            <td><%=notas.get(i).getTercerCorte()%></td>
-            <td><%=notas.get(i).getNotaFinal()%></td>
+            <td><input required  type="number" name="primeraNota<%=i%>" value="<%=notas.get(i).getPrimerCorte()%>" min="0" max="50"></td>
+            <td><input required type="number" name="segundaNota<%=i%>" value="<%=notas.get(i).getSegundoCorte()%>" min="0" max="50"></td>
+            <td><input required type="number" name="terceraNota<%=i%>" value="<%=notas.get(i).getTercerCorte()%>" min="0" max="50"></td>
+            <td><input type="number" value="<%=notas.get(i).getNotaFinal()%>" disabled></td>
         </tr>
         <%}%>
 
         </tbody>
+
     </table>
+    <input type="submit" value="Enviar notas" class=" btn-registro  btn-lg btn-block mb-1">
+    </form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

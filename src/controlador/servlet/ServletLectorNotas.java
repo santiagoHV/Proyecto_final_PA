@@ -19,39 +19,58 @@ public class ServletLectorNotas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String rol = "estudiante";//req.getParameter("rol");
+        String rol = (String) req.getSession().getAttribute("rol");
+        System.out.println(rol+req.getSession().getAttribute("codigo"));
         ArrayList<Notas> notas= new ArrayList<Notas>();
         DBMaterias conexionDB =new DBMaterias();
         ResultSet res = null;
 
         if(rol.equals("estudiante")){
             try {
-                res = conexionDB.getNotasByEstudiante(20201003);//Integer.parseInt(req.getParameter("codigo")));
+                res = conexionDB.getNotasByEstudiante(Integer.parseInt((String) req.getSession().getAttribute("codigo")));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }
+            while (true){
+                try {
+                    if (!res.next()) break;
+                    System.out.println(res.getString("materia_p")+res.getString("corte3"));
+                    notas.add(new Notas(res.getString("materia_p"),"20201003",res.getInt("corte1"),
+                            res.getInt("corte2"),res.getInt("corte3")));
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
             }
         }else if(rol.equals("profesor")){
             try {
-                res = conexionDB.getNotasByProfesore(req.getParameter("materia"));
+                System.out.println(obtenerMateria((String) req.getSession().getAttribute("codigo")));
+                res = conexionDB.getNotasByProfesore(obtenerMateria((String) req.getSession().getAttribute("codigo")));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-        }
-        while (true){
-            try {
-                if (!res.next()) break;
-                System.out.println(res.getString("materia_p")+res.getString("corte3"));
-                notas.add(new Notas(res.getString("materia_p"),"20201003",res.getInt("corte1"),
-                        res.getInt("corte2"),res.getInt("corte3")));
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+            while (true){
+                try {
+                    if (!res.next()) break;
+                    notas.add(new Notas("materia",res.getString("codigo_e"),res.getInt("corte1"),
+                            res.getInt("corte2"),res.getInt("corte3")));
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
             }
         }
+
         for(int i = 0;i < notas.size();i++) {
             System.out.println(notas.get(i).getMateria()+notas.get(i).getPrimerCorte());
         }
 
         req.getSession().setAttribute("notas",notas);
+        resp.sendRedirect("lectorNotas.jsp");
+    }
+    String obtenerMateria(String id) throws SQLException {
+        DBProfesor conexionDB = new DBProfesor();
+        ResultSet res = conexionDB.getProfesorById(id);
+        res.next();
+        return res.getString("materia");
     }
 
 }

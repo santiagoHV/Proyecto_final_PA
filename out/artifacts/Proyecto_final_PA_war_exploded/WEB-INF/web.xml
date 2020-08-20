@@ -37,4 +37,20 @@
         <servlet-name>Lector-notas</servlet-name>
         <url-pattern>/Lector-notas</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Editor-notas</servlet-name>
+        <servlet-class>controlador.servlet.ServletPreEditor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Editor-notas</servlet-name>
+        <url-pattern>/Editor-notas</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Paso-edicion</servlet-name>
+        <servlet-class>controlador.servlet.ServletEditorNotas</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Paso-edicion</servlet-name>
+        <url-pattern>/Edicion-hecha</url-pattern>
+    </servlet-mapping>
 </web-app>

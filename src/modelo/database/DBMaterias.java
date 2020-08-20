@@ -85,7 +85,7 @@ public class DBMaterias {
      * Actualiza notas de un estudiante
      * @param a
      */
-    public void actualizarNotas(Notas a) {
+    public static void actualizarNotas(Notas a) {
             try {
                         PreparedStatement pstm = cn.getConexion().prepareStatement("update materia set corte1=?,"
                                 + " corte2,"

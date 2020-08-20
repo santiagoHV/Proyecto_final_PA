@@ -31,6 +31,8 @@ public class ServletIngreso extends HttpServlet {
         if(parametroInicialUsuario.equals( "1")){
             try {
                 if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,false)){
+                    request.getSession().setAttribute("rol","profesor");
+                    request.getSession().setAttribute("codigo",usuarioDeEntrada);
                     request.getSession().setAttribute("menu",serviciosHome("1"));
                     response.sendRedirect("home.jsp");
                 }else{
@@ -44,6 +46,8 @@ public class ServletIngreso extends HttpServlet {
         }else if(parametroInicialUsuario.equals("2")){
             try {
                 if(verificarUsuario(usuarioDeEntrada,contraseñaDeEntrada,true)){
+                    request.getSession().setAttribute("rol","estudiante");
+                    request.getSession().setAttribute("codigo",usuarioDeEntrada);
                     request.getSession().setAttribute("menu",serviciosHome("2"));
                     response.sendRedirect("home.jsp");
                 }else{
@@ -73,7 +77,6 @@ public class ServletIngreso extends HttpServlet {
         DBProfesor idProfesorDB = new DBProfesor();
         ResultSet res;
         String DBdiferenciador;
-        System.out.println(rol);
 
         try {
             if(rol) {
@@ -86,7 +89,6 @@ public class ServletIngreso extends HttpServlet {
                 DBdiferenciador = "p";
             }
             res.next();
-            System.out.println(res.getString("contrasena_"+DBdiferenciador));
             if (res.getString("contrasena_"+DBdiferenciador).equals(contraseña)) {
                 return true;
             }else{
