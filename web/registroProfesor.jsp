@@ -49,7 +49,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña" name="inputContraseña">
+                        <input type="password" class="form-control" id="inputContrasena" name="inputContrasena">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
