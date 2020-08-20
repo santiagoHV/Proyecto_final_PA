@@ -46,7 +46,12 @@ public class ServletLectorNotas extends HttpServlet {
         req.getSession().setAttribute("notas",notas);
     }
 
-
+    /**
+     * Pide y organiza las notas de la base de datos
+     * @param res
+     * @return
+     * @throws SQLException
+     */
     ArrayList<Notas> distribuirNotas(ResultSet res) throws SQLException {
         ArrayList<Notas> notas= new ArrayList<Notas>();
         while (res.next()){

@@ -11,6 +11,12 @@ public class DBProfesor{
 
     static DBConexion cn = new DBConexion();
 
+    /**
+     * Trae los datos de un profesor segun su ID
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     public ResultSet getProfesorById(String id) throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_p, "
                 + " contrasena_p,"
@@ -45,6 +51,10 @@ public class DBProfesor{
         return res;
     }
 
+    /**
+     * Registra un nuevo profesor en la base de datos
+     * @param a
+     */
     public static void insertarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into profesor (id_p,"
@@ -71,6 +81,10 @@ public class DBProfesor{
 
     }
 
+    /**
+     * Actualiza los datos de un profesor
+     * @param a
+     */
     public static void actualizarProfesor(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update profesor set contrasena_p=?,"

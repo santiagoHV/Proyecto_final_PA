@@ -11,7 +11,12 @@ public class DBMetodos {
     public DBMetodos() {
         cn = new DBConexion();
     }
-    //-------------------PARTE SALDARRIAGA NO TOCARXD-------------------------------------------------------------------------------
+
+    /**
+     * Trae el ID de estudiante generado
+     * @return
+     * @throws SQLException
+     */
     public ResultSet getIdEstGenerado() throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT pk_cargo, "
                                                                      + "id_g"
@@ -21,6 +26,12 @@ public class DBMetodos {
         res.next();
         return res;
     }
+
+    /**
+     * Trae el ID de profesor generado
+     * @return
+     * @throws SQLException
+     */
     public ResultSet getIdProfGenerado() throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT pk_cargo, "
                                                                      + "id_g"
@@ -31,6 +42,11 @@ public class DBMetodos {
         System.out.println("res = "+res);
         return res;
     }
+
+    /**
+     * Ingresa el ID que se utilizara en el siguiente registro de estudiante
+     * @param idx
+     */
     public void insertarSiguienteIDEst(String idx) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update generador_id set id_g = ?"
@@ -41,6 +57,11 @@ public class DBMetodos {
             System.out.println(e);
         }
     }
+
+    /**
+     * Ingresa el ID que se utilizara en el siguiente registro de profesor
+     * @param idx
+     */
     public void insertarSiguienteIDProf(String idx) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update generador_id set id_g = ?"
@@ -51,5 +72,4 @@ public class DBMetodos {
             System.out.println(e);
         }
     }
-    //-------------------------------------------------------------------------------------------------------------------------------
 }
