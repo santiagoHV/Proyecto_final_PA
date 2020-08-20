@@ -1,5 +1,6 @@
 package controlador.servlet;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import modelo.database.DBAlumno;
 import modelo.database.DBMaterias;
 import modelo.database.DBProfesor;
@@ -25,7 +26,7 @@ public class ServletLectorNotas extends HttpServlet {
 
         if(rol.equals("estudiante")){
             try {
-                res = conexionDB.getNotasByEstudiante(Integer.parseInt(req.getParameter("codigo")));
+                res = conexionDB.getNotasByEstudiante(20201003);//Integer.parseInt(req.getParameter("codigo")));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -36,28 +37,21 @@ public class ServletLectorNotas extends HttpServlet {
                 throwables.printStackTrace();
             }
         }
-        try {
-            notas = distribuirNotas(res);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        while (true){
+            try {
+                if (!res.next()) break;
+                System.out.println(res.getString("materia_p")+res.getString("corte3"));
+                notas.add(new Notas(res.getString("materia_p"),"20201003",res.getInt("corte1"),
+                        res.getInt("corte2"),res.getInt("corte3")));
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
-        int i = 0;
-        while (notas.get(i) == null) System.out.println(notas.get(i).getEstudiante());
+        for(int i = 0;i < notas.size();i++) {
+            System.out.println(notas.get(i).getMateria()+notas.get(i).getPrimerCorte());
+        }
+
         req.getSession().setAttribute("notas",notas);
     }
 
-    /**
-     * Pide y organiza las notas de la base de datos
-     * @param res
-     * @return
-     * @throws SQLException
-     */
-    ArrayList<Notas> distribuirNotas(ResultSet res) throws SQLException {
-        ArrayList<Notas> notas= new ArrayList<Notas>();
-        while (res.next()){
-            notas.add(new Notas(res.getString("materia_p"),res.getString("codigo_e"),res.getInt("corte1"),
-                    res.getInt("corte2"),res.getInt("corte3")));
-        }
-        return notas;
-    }
 }

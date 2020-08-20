@@ -57,7 +57,7 @@ public class DBMaterias {
      * Ingresa notas a un estudiante
      * @param a
      */
-    public static void insertarNotas(Notas a) {
+    public void insertarNotas(Notas a) {
             try {
                 PreparedStatement pstm = cn.getConexion().prepareStatement("insert into materia (materia_p,"
                         + " codigo_e,"
@@ -67,7 +67,7 @@ public class DBMaterias {
                         + " corteFinal)"
                         + " values(?,?,?,?,?,?)");
                 pstm.setString(1, a.getMateria());
-                pstm.setString(2, a.getEstudiante());
+                pstm.setInt(2, Integer.parseInt(a.getEstudiante()));
                 pstm.setInt(3, a.getPrimerCorte());
                 pstm.setInt(4, a.getSegundoCorte());
                 pstm.setInt(5, a.getTercerCorte());

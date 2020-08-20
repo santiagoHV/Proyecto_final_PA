@@ -38,6 +38,7 @@ public class ServletRegistro extends HttpServlet {
         request.getSession().setAttribute("id",request.getParameter("id"));
         if(request.getParameter("rol").equals("estudiante")){
             dataBaseAlumno.insertarAlumno(nuevoUsuario);
+            crearUsuarioEnDB(request.getParameter("id"));
         }
         else{
             dataBaseProfesor.actualizarProfesor(nuevoUsuario);
@@ -62,14 +63,23 @@ public class ServletRegistro extends HttpServlet {
         /*rol => true = estudiante; false = profesor
          */
         if(rol.equals("estudiante")){
+
             return new Estudiante(nombre,apellido,correo,contacto,password,id);
         }else{
             return new Profesor(nombre,apellido,correo,contacto,password,id,materia);
         }
     }
-    void crearUsuarioEnDB(){
+    void crearUsuarioEnDB(String id){
         DBMaterias conexionMaterias = new DBMaterias();
-        Notas nota1 = new Notas("CM","ACA VA EL ID",0,0,0);
-        //conexionMaterias.insertarNotas();
+        Notas[] notas = new Notas[6];
+        notas[0] = new Notas("CM",id,0,0,0);
+        notas[1] = new Notas("ED",id,0,0,0);
+        notas[2] = new Notas("FEM",id,0,0,0);
+        notas[3] = new Notas("I2",id,0,0,0);
+        notas[4] = new Notas("PA",id,0,0,0);
+        notas[5] = new Notas("TGS",id,0,0,0);
+        for(int i = 0;i < 6;i++){
+            conexionMaterias.insertarNotas(notas[i]);
+        }
     }
 }
