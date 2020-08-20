@@ -50,7 +50,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input required type="password" class="form-control" id="inputContraseña" name="inputContraseña" placeholder="Contraseña">
+                        <input required type="password" class="form-control" id="inputContrasena" name="inputContrasena" placeholder="Contraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
