@@ -12,6 +12,9 @@ public class DBAlumno {
 
     DBConexion cn = new DBConexion();
 
+    /**
+     * Trae los datos de un alumno segun un ID
+     */
     public ResultSet getAlumnoById(String id) throws SQLException {
         PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT id_a, "
                 + " contrasena_a,"
@@ -43,6 +46,9 @@ public class DBAlumno {
         return res;
     }
 
+    /**
+     * Inserta datos en la tabla de alumnos
+     */
     public void insertarAlumno(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("insert into alumno (id_a,"
@@ -67,6 +73,9 @@ public class DBAlumno {
 
     }
 
+    /**
+     * Actualiza los datos de la tabla alumnos
+     */
     public void actualizarAlumno(Usuario a) {
         try {
             PreparedStatement pstm = cn.getConexion().prepareStatement("update alumno set contraseña_a=?,"

@@ -65,6 +65,9 @@ public class Usuario{
         this.id = id;
     }
 
+    /**
+     * Metodo de setear parametros para herencia
+     */
     public void setAtributos(){
     }
 }

@@ -11,6 +11,13 @@ import java.sql.SQLException;
 public class DBMaterias {
     static DBConexion cn = new DBConexion();
 
+    /**
+     * Trae las notas de un estudiante segun su ID
+     *
+     * @param codigo_e
+     * @return
+     * @throws SQLException
+     */
         public ResultSet getNotasByEstudiante(int codigo_e) throws SQLException {
             PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT materia_p, "
                     + " corte1,"
@@ -25,6 +32,13 @@ public class DBMaterias {
             return res;
         }
 
+    /**
+     * Trae todas las notas de una materia
+     *
+     * @param materia_p
+     * @return
+     * @throws SQLException
+     */
         public ResultSet getNotasByProfesore(String materia_p) throws SQLException {
             PreparedStatement pstm = cn.getConexion().prepareStatement("SELECT codigo_e, "
                     + " corte1,"
@@ -39,7 +53,11 @@ public class DBMaterias {
             return res;
         }
 
-        public static void insertarNotas(Notas a) {
+    /**
+     * Ingresa notas a un estudiante
+     * @param a
+     */
+    public static void insertarNotas(Notas a) {
             try {
                 PreparedStatement pstm = cn.getConexion().prepareStatement("insert into materia (materia_p,"
                         + " codigo_e,"
@@ -63,7 +81,11 @@ public class DBMaterias {
 
         }
 
-        public void actualizarNotas(Notas a) {
+    /**
+     * Actualiza notas de un estudiante
+     * @param a
+     */
+    public void actualizarNotas(Notas a) {
             try {
                         PreparedStatement pstm = cn.getConexion().prepareStatement("update materia set corte1=?,"
                                 + " corte2,"

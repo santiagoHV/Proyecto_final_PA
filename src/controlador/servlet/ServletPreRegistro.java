@@ -53,7 +53,8 @@ public class ServletPreRegistro extends HttpServlet {
     }
 
     /**
-     *
+     *Trae y asigna el ID de estudaintes que esta en la base de datos
+     *y devuelve el proximo
      * @param conexionDB
      * @return
      */
@@ -75,7 +76,8 @@ public class ServletPreRegistro extends HttpServlet {
     }
 
     /**
-     *
+     * Trae y asigna el ID de profesor que esta en la base de datos
+     * y devuelve el proximo
      * @param conexionDB
      * @return
      */
@@ -95,6 +97,11 @@ public class ServletPreRegistro extends HttpServlet {
     return idProfesorNuevo;
     }
 
+    /**
+     * Habilita la materia de un profesor
+     * @param in
+     * @return
+     */
     String habilitarMateriaProfesor(String in){
         if(in.equals("Por Asignar"))return "";
         else return "disabled class='disabled'";

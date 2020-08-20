@@ -2,6 +2,14 @@ package modelo.logica;
 
 public class Notas {
 
+    /**
+     * Constructor que inicializa todos los atributos
+     * @param materia
+     * @param estudiante
+     * @param primerCorte
+     * @param segundoCorte
+     * @param tercerCorte
+     */
     public Notas(String materia, String estudiante, int primerCorte, int segundoCorte, int tercerCorte){
         this.materia = materia;
         this.estudiante = estudiante;
@@ -14,7 +22,6 @@ public class Notas {
     private int primerCorte;
     private int segundoCorte;
     private int tercerCorte;
-    private double notaFinal;
 
     public String getMateria() {
         return materia;
@@ -56,6 +63,10 @@ public class Notas {
         this.tercerCorte = tercerCorte;
     }
 
+    /**
+     * Retorna nota promediada
+     * @return
+     */
     public double getNotaFinal() {
         return (primerCorte*0.35)+(segundoCorte*0.35)+(tercerCorte*0.3);
     }

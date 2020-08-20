@@ -57,6 +57,14 @@ public class ServletIngreso extends HttpServlet {
         }
     }
 
+    /**
+     * Valida los parametros ingresados y distingue su cargo
+     * @param usuario
+     * @param contraseña
+     * @param rol
+     * @return
+     * @throws SQLException
+     */
     boolean verificarUsuario(String usuario,String contraseña,boolean rol) throws SQLException {
         /*rol => true = estudiante; false = profesor
         */
@@ -89,6 +97,12 @@ public class ServletIngreso extends HttpServlet {
             return false;
         }
     }
+
+    /**
+     * Carga el home
+     * @param rol
+     * @return
+     */
     String[][] serviciosHome(String rol){
         String calificaciones[][] = new String[3][2];
             if(rol.equals("1")){
@@ -110,6 +124,12 @@ public class ServletIngreso extends HttpServlet {
             }
         return calificaciones;
     }
+
+    /**
+     * Arroja el mensaje de bienvenida
+     * @param rol
+     * @return
+     */
     String escritoBievenida(String rol){
         if(rol.equals("1"))return "Este es el nuevo sistema de gestión académica para estudiantes de tercer semestre de ingeniería de sistemas de la universidad distrital Francisco Jose de Caldas, en este aplicativo tendrá acceso a su curso, lectura de notas y edición de las mismas; esto junto con el pensum de su materia.";
         else if(rol.equals("2")) return "Este es el nuevo sistema de gestión académica para estudiantes de tercer semestre de ingeniería de sistemas de la universidad distrital Francisco Jose de Caldas, en este aplicativo tendrá acceso a sus notas parciales, finales y acumuladas; esto junto con su horario el cual le fue asignado para el semestre en curso.";
