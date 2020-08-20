@@ -27,10 +27,10 @@
             <li class="nav-item ">
                 <a class="nav-link" href="#">Inicio </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="#">Perfil</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="<%=menu[2][1]%>"><%=menu[2][0]%></a>
             </li>
             <li class="nav-item dropdown">

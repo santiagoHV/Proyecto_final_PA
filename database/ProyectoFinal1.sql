@@ -32,35 +32,21 @@ create table generador_id(
 pk_cargo int(3) primary key,
 id_g varchar(15)
 );
-<<<<<<< HEAD
-insert into generador_id values ('1','20201020000');
-insert into generador_id values ('2','1020000');
-select  pk_cargo, id_g from generador_id; 
-drop table profesor;
-=======
+insert into generador_id values ('1','2020100');
+insert into generador_id values ('2','102000');
 
-insert into generador_id values (2,'10020000');
+insert into profesor (materia,nombre_p,apellido_p) values ('TGS','Por Asignar',"");
+insert into profesor (materia,nombre_p,apellido_p) values ('CM','Por Asignar',"");
+insert into profesor (materia,nombre_p,apellido_p) values ('ED','Por Asignar',"");
+insert into profesor (materia,nombre_p,apellido_p) values ('FEM','Por Asignar',"");
+insert into profesor (materia,nombre_p,apellido_p) values ('PA','Por Asignar',"");
+insert into profesor (materia,nombre_p,apellido_p) values ('I2','Por Asignar',"");
 
-insert into generador_id values (2,'10020000');
-
-insert into generador_id values (2,'10020000');
-
-insert into profesor (materia,nombre_p) values ('TGS','Por Asignar');
-insert into profesor (materia,nombre_p) values ('CM','Por Asignar');
-insert into profesor (materia,nombre_p) values ('ED','Por Asignar');
-insert into profesor (materia,nombre_p) values ('FEM','Por Asignar');
-insert into profesor (materia,nombre_p) values ('PA','Por Asignar');
-insert into profesor (materia,nombre_p) values ('I2','Por Asignar');
-
+select* from alumno;
+select* from profesor;
+select* from materia;
 select  pk_cargo, id_g from generador_id WHERE pk_cargo = 2; 
 drop table profesor;
-<<<<<<< HEAD
-<<<<<<< HEAD
-drop database proyecto 
->>>>>>> parent of 69d649d... correcciones en registro
-=======
-drop database proyecto 
->>>>>>> parent of 69d649d... correcciones en registro
-=======
-drop database proyecto 
->>>>>>> parent of 69d649d... correcciones en registro
+drop database proyecto; 
+SELECT materia_p, corte1, corte2, corte3, corteFinal FROM materia WHERE codigo_e = 20201003;
+update materia set corte1 = 3, corte2 = 3, corte3 = 3, corteFinal = 3 where codigo_e = 20201003 and materia_p = "TGS"

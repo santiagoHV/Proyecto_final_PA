@@ -1,6 +1,6 @@
 package modelo.logica;
 
-public class Usuario{
+public abstract class Usuario {
     protected String nombre;
     protected String apellido;
     protected String correo;

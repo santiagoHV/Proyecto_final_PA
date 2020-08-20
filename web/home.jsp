@@ -40,6 +40,7 @@
                 </div>
             </li>
         </ul>
+        <a href="index.jsp"><button class="btn btn-outline-success my-2 my-sm-0 ">Log out</button></a>
     </div>
 </nav>
 <div class=" container container-home p-5 mt-3">
