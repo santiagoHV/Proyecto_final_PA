@@ -10,7 +10,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="assets/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
 
 </head>
 

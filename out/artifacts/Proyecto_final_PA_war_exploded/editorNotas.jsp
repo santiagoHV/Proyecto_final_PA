@@ -13,7 +13,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="assets/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
@@ -61,7 +61,7 @@
         <tbody>
 
         <%for(int i = 0;i < notas.size();i++){%>
-            <input type="hidden" name="estudiante<%=i%>">
+            <input type="hidden" name="estudiante<%=i%>" value="<%=notas.get(i).getEstudiante()%>">
         <tr>
             <th scope="row"><%=notas.get(i).getEstudiante()%></th>
             <td><input required  type="number" name="primeraNota<%=i%>" value="<%=notas.get(i).getPrimerCorte()%>" min="0" max="50"></td>

@@ -29,7 +29,7 @@ public class ServletPreEditor extends HttpServlet {
             while (true){
                 try {
                     if (!res.next()) break;
-                    notas.add(new Notas("materia",res.getString("codigo_e"),res.getInt("corte1"),
+                    notas.add(new Notas(obtenerMateria((String) req.getSession().getAttribute("codigo")),res.getString("codigo_e"),res.getInt("corte1"),
                             res.getInt("corte2"),res.getInt("corte3")));
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();

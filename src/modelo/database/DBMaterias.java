@@ -87,16 +87,16 @@ public class DBMaterias {
      */
     public static void actualizarNotas(Notas a) {
             try {
-                        PreparedStatement pstm = cn.getConexion().prepareStatement("update materia set corte1=?,"
-                                + " corte2,"
-                                + " corte3,"
-                                + " corteFinal"
-                                + " where codigo_e = ?,"
+                        PreparedStatement pstm = cn.getConexion().prepareStatement("update materia set corte1 = ?,"
+                                + " corte2 = ?,"
+                                + " corte3 = ?,"
+                                + " corteFinal = ?"
+                                + " where codigo_e = ? and"
                                 + " materia_p = ?");
-                pstm.setInt(3, a.getPrimerCorte());
-                pstm.setInt(4, a.getSegundoCorte());
-                pstm.setInt(5, a.getTercerCorte());
-                pstm.setDouble(6, a.getNotaFinal());
+                pstm.setInt(1, a.getPrimerCorte());
+                pstm.setInt(2, a.getSegundoCorte());
+                pstm.setInt(3, a.getTercerCorte());
+                pstm.setDouble(4, a.getNotaFinal());
                 pstm.setString(5, a.getEstudiante());
                 pstm.setString(6, a.getMateria());
                 pstm.executeUpdate();

@@ -15,8 +15,11 @@ public class ServletEditorNotas extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ArrayList<Notas> notasAntiguas = (ArrayList<Notas>) req.getSession().getAttribute("notas");
         for(int i = 0;i < notasAntiguas.size();i++){
+            System.out.println(req.getSession().getAttribute("materia"));
             DBMaterias.actualizarNotas(new Notas((String) req.getSession().getAttribute("materia"),req.getParameter("estudiante"+i),Integer.parseInt(req.getParameter("primeraNota"+i)),
                     Integer.parseInt(req.getParameter("segundaNota"+i)),Integer.parseInt(req.getParameter("terceraNota"+i))));
+            System.out.println(req.getParameter("estudiante"+i)+Integer.parseInt(req.getParameter("primeraNota"+i)));
         }
+        resp.sendRedirect("home.jsp");
     }
 }
