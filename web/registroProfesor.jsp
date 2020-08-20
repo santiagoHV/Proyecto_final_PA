@@ -49,11 +49,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña">
+                        <input type="password" class="form-control" id="inputContraseña" name="inputContraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="password">
+                        <input type="password" class="form-control" id="inputContraseña2" name="inputContraseña2" placeholder="Contraseña" name="password">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>

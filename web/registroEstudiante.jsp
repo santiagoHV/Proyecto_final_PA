@@ -22,7 +22,7 @@
     <div class="row">
 
         <div class="offset-md-1 col-md-10 mt-4">
-            <form id="addForm" class=" form-registro " method="post" action="/Registro-completo">
+            <form name="addForm" class=" form-registro " method="post" action="/Registro-completo">
                 <input type="hidden" name="rol" value="estudiante">
                 <input type="hidden" name="materia" value="NULO">
                 <img src="assets/img/escudo.png" class="escudo-registro mb-5 mt-3">
@@ -50,11 +50,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input required type="password" class="form-control" id="inputContraseña" placeholder="Contraseña">
+                        <input required type="password" class="form-control" id="inputContraseña" name="inputContraseña" placeholder="Contraseña">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
-                        <input required type="password" class="form-control" id="inputContraseña2" placeholder="Contraseña" name="password">
+                        <input required type="password" class="form-control" id="inputContraseña2" name="inputContraseña2" placeholder="Contraseña" name="password">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <H3>Id generado</H3>
