@@ -135,4 +135,5 @@ public class ServletIngreso extends HttpServlet {
         else if(rol.equals("2")) return "Este es el nuevo sistema de gestión académica para estudiantes de tercer semestre de ingeniería de sistemas de la universidad distrital Francisco Jose de Caldas, en este aplicativo tendrá acceso a sus notas parciales, finales y acumuladas; esto junto con su horario el cual le fue asignado para el semestre en curso.";
         else return "";
     }
+
 }

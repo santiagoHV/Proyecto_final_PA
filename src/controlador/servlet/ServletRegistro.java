@@ -1,8 +1,10 @@
 package controlador.servlet;
 import modelo.database.DBAlumno;
+import modelo.database.DBMaterias;
 import modelo.database.DBMetodos;
 import modelo.database.DBProfesor;
 import modelo.logica.Estudiante;
+import modelo.logica.Notas;
 import modelo.logica.Profesor;
 import modelo.logica.Usuario;
 
@@ -28,9 +30,9 @@ public class ServletRegistro extends HttpServlet {
         DBProfesor dataBaseProfesor = new DBProfesor();
         DBAlumno dataBaseAlumno = new DBAlumno();
         System.out.println(request.getParameter("id"));
-        System.out.println(request.getParameter("password"));
+        System.out.println(request.getParameter("passwordregistro"));
         Usuario nuevoUsuario = crearUsuario(request.getParameter("rol"),request.getParameter("nombre"),request.getParameter("apellidos"),request.getParameter("correo"),
-                request.getParameter("contacto"),request.getParameter("password"),request.getParameter("id"),request.getParameter("materia"));
+                request.getParameter("contacto"),request.getParameter("passwordregistro"),request.getParameter("id"),request.getParameter("materia"));
         request.getSession().setAttribute("rol",request.getParameter("rol"));
         request.getSession().setAttribute("id",request.getParameter("id"));
         if(request.getParameter("rol").equals("estudiante")){
@@ -63,5 +65,10 @@ public class ServletRegistro extends HttpServlet {
         }else{
             return new Profesor(nombre,apellido,correo,contacto,password,id,materia);
         }
+    }
+    void crearUsuarioEnDB(){
+        DBMaterias conexionMaterias = new DBMaterias();
+        Notas nota1 = new Notas("CM","ACA VA EL ID",0,0,0);
+        //conexionMaterias.insertarNotas();
     }
 }
