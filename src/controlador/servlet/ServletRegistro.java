@@ -26,6 +26,7 @@ public class ServletRegistro extends HttpServlet {
     }
 
     @Override
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DBProfesor dataBaseProfesor = new DBProfesor();
         DBAlumno dataBaseAlumno = new DBAlumno();

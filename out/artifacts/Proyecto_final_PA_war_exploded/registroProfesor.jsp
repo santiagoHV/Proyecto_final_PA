@@ -49,7 +49,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputNombre">Nueva contraseña</label>
-                        <input type="password" class="form-control" id="inputContraseña" name="inputContraseña">
+                        <input type="password" class="form-control" id="inputContrasena" name="inputContrasena">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputApellido">Repita la contraseña</label>
@@ -125,7 +125,7 @@
 </div>
 </div>
 
-<script src="assets/functions-front.js" type="text/javascript"></script>
+<script src="assets/functions-fron.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
