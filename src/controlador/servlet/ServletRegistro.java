@@ -22,7 +22,6 @@ public class ServletRegistro extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
     }
 
     @Override
@@ -69,6 +68,11 @@ public class ServletRegistro extends HttpServlet {
             return new Profesor(nombre,apellido,correo,contacto,password,id,materia);
         }
     }
+
+    /**
+     * Inicializa al estudiante en la base de datos
+     * @param id
+     */
     void crearUsuarioEnDB(String id){
         DBMaterias conexionMaterias = new DBMaterias();
         Notas[] notas = new Notas[6];
