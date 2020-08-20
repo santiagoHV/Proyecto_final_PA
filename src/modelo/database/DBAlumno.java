@@ -28,7 +28,7 @@ public class DBAlumno {
 
         ResultSet res = pstm.executeQuery();
         /*
-         res.close();
+         res.close( );
          */
 
         return res;

@@ -15,11 +15,12 @@ public class Estudiante extends Usuario{
      * @param id
      */
     public void setAtributos(String nombre, String apellido, String correo, String contacto, String password, String id) {
-        super.nombre=nombre;
-        super.apellido=apellido;
-        super.contacto=contacto;
-        super.correo=correo;
-        super.id=id;
-        super.password=password;
+        super.nombre = nombre;
+        super.apellido = apellido;
+        super.contacto = contacto;
+        super.correo = correo;
+        super.id = id;
+        super.password = password;
+        super.materia = "";
     }
 }
