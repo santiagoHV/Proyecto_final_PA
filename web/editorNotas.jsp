@@ -27,10 +27,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Inicio </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Perfil</a>
+                <a class="nav-link" href="/Perfil">Perfil</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<%=menu[2][1]%>"><%=menu[2][0]%></a>

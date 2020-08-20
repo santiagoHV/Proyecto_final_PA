@@ -53,4 +53,12 @@
         <servlet-name>Paso-edicion</servlet-name>
         <url-pattern>/Edicion-hecha</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Perfil</servlet-name>
+        <servlet-class>controlador.servlet.ServletPerfil</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Perfil</servlet-name>
+        <url-pattern>/Perfil</url-pattern>
+    </servlet-mapping>
 </web-app>
