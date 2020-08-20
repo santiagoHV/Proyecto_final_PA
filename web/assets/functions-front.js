@@ -8,10 +8,10 @@ function distribuirUsuario(papel) {
 
 function validarFormulario() {
     var formulario = document.addForm;
-    if (formulario.inputContraseña.value != formulario.inputContraseña2.value) {
+    if (formulario.inputContraseña.value != formulario.passwordregistro.value) {
         alert("Contraseñas iguales so");
         formulario.inputContraseña.value = "";
-        formulario.inputContraseña1.value = "";
+        formulario.passwordregistro.value = "";
         return false;
     } else {
         return true
